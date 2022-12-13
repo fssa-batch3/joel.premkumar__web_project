@@ -110,6 +110,45 @@ nav {
 span {
     color: green;
 }
+#Shares {
+    display: flex;
+    justify-content: space-around;
+}
+#Fractional {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    height: 370px;
+    padding: 30px;
+    color: whitesmoke;
+    border-radius: 10px;
+}
+#Fractional p {
+    margin-top: -10px;
+    padding-bottom: 10px;
+}
+#Fractional h4{
+    margin-right: 110px;
+}
+#Value {
+    height: 70px;
+    width: 300px;
+}
+#Fractional input {
+    border: green solid 2px;
+    border-radius: 8px;
+}
+#btn {
+    background-color: rgba(0,135,246,255);
+    border-radius: 15px;
+    color: white;
+    width: 200px;
+    height: 80px;
+    border-color: blue;
+    border-style: none;
+    font-weight: bold;
+}
 #Performance img {
     width: 750px;
     margin-left: 130px;
@@ -117,17 +156,59 @@ span {
 }
 #Company {
     width: 750px;
-    margin-left: 160px;
+    margin-left: 120px;
+    border-radius: 5px;
+    border: solid #f2f2f2 1px;
+    box-shadow: -1px -1px 5px #f2f2f2;
+    padding: 10px;
+    margin-bottom: 80px;
+}
+#Company p{
+    padding: 25px;
+}
+#Company h2{
+    padding: 25px;
+}
+#Org {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(175, 175, 175);
+    border-top: 1px solid rgb(175, 175, 175);
+}
+#Emp {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(175, 175, 175);
+}
+#CEO {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(175, 175, 175);
+}
+#Industry {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(175, 175, 175);
+}
+#Buy {
+    width: 671px;
+    margin-left: 120px;
+    border-radius: 5px;
+    border: solid #f2f2f2 1px;
+    box-shadow: -1px -1px 5px #f2f2f2;
+    padding: 50px;
+}
+#Buy img{
+    width: 700px;
 }
 footer{
     display:flex;
     justify-content: space-around;
     background-color: #1f1f1f;
     padding-top: 20px;
-    color: white;
+    color: whitesmoke;
 
 }
-#info {
-    display: flex;
-    justify-content: space-between;
+footer p {
+    margin-top: 250px;
 }
