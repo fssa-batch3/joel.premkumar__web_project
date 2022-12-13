@@ -160,11 +160,13 @@ nav {
     bottom: 0px;
 
 }
- footer{
+footer{
     display:flex;
     justify-content: space-around;
     background-color: #1f1f1f;
     padding-top: 20px;
-    color: white;
-
+    color: whitesmoke;
+}
+footer p {
+    margin-top: 250px;
 }
