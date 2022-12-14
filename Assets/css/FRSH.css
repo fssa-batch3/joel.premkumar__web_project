@@ -201,9 +201,23 @@ span {
 #Buy img{
     width: 700px;
 }
-.buy {width: 61%; background-color: #04AA6D;}
-.hold {width: 38%; background-color: #2196F3;}
-.sell {width: 5%; background-color: #f44336;}
+.buy { 
+    width: 61%; background-color: #04AA6D;
+    animation-name: color;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.hold {
+    width: 38%; background-color: #2196F3;
+    animation-name: color2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.sell {width: 5%; background-color: #f44336;
+    animation-name: color3;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
 
 .skills {
     text-align: right;
@@ -213,14 +227,18 @@ span {
     color: white;
     
   }
-footer{
-    display:flex;
-    justify-content: space-around;
-    background-color: #1f1f1f;
-    padding-top: 20px;
-    color: whitesmoke;
-
-}
+  @keyframes color{
+    0%{background-color: #04AA6D;width: 10%;}
+    50%{background-color: #04AA6D;width: 60%;}
+  }
+  @keyframes color2{
+    0%{background-color: #2196F3;width: 10%;}
+    50%{background-color:#2196F3;width: 37%;}
+  }
+  @keyframes color3{
+    0%{background-color: #f44336;width: 10%;}
+    50%{background-color: #f44336;width: 4%;}
+  }
 footer p {
     margin-top: 250px;
 }
