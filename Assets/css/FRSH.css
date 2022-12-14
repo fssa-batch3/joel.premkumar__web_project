@@ -201,6 +201,18 @@ span {
 #Buy img{
     width: 700px;
 }
+.buy {width: 61%; background-color: #04AA6D;}
+.hold {width: 38%; background-color: #2196F3;}
+.sell {width: 5%; background-color: #f44336;}
+
+.skills {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    color: white;
+    
+  }
 footer{
     display:flex;
     justify-content: space-around;
