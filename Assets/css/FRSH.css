@@ -113,6 +113,12 @@ span {
 #Shares {
     display: flex;
     justify-content: space-around;
+    animation-name: move;
+    animation-duration: 3s;
+}
+@keyframes move{
+    0%{transform: translateY(-100px);}
+    50%{transform: translateY(0px);}
 }
 #Fractional {
     display: flex;
