@@ -134,9 +134,6 @@ span {
 #what p{
     padding-top: 60px;
 }
-#Color {
-    color: whitesmoke;
-}
 #Explore{
     display: flex;
     width: 250px;
@@ -157,6 +154,7 @@ span {
     flex-direction: column;
     width: 1200px;
     padding-left: 200px;
+    color: whitesmoke;
 }
 #Invest {
     padding: 0;
