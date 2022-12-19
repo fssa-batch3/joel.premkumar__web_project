@@ -1,12 +1,13 @@
-body{
+body {
     margin: 0;
     padding: 0;
     width: 100%;
     background-color: black;
     color: whitesmoke;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-header{
+
+header {
     background-color: white;
     width: 1467px;
     height: 50px;
@@ -15,15 +16,19 @@ header{
     z-index: 2;
     padding: 10px;
 }
+
 header a {
     margin-left: 120px;
 }
+
 #US ul {
     padding: 0;
 }
+
 #US ul li {
     margin-left: 15px;
 }
+
 #Add {
     display: flex;
     justify-content: space-around;
@@ -31,35 +36,57 @@ header a {
     height: 850px;
     width: 1467px;
 }
+
 #Money {
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color:  #f2f2f2;
-height: 370px;
-width: 400px;
-padding: 50px;
-color: black;
-border-radius: 10px;
-font-size:medium;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    height: 370px;
+    width: 400px;
+    padding: 50px;
+    color: black;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+#coin {
+    animation-name: move;
+    animation-duration: 2s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 span {
     color: green;
 }
+
 #Money input {
     border: goldenrod solid 2px;
     border-radius: 8px;
     height: 30px;
 }
+
 #Money h3 {
     margin-top: -10px;
 }
+
 #Money h4 {
     margin-top: -5px;
 }
+
 #btn {
-    background-color: rgba(39,155,72,255);
+    background-color: rgba(39, 155, 72, 255);
     border-radius: 15px;
     color: white;
     width: 200px;
@@ -69,13 +96,12 @@ span {
     font-weight: bold;
     margin-top: 20px;
 }
-footer{
-    display:flex;
+
+footer {
+    display: flex;
     justify-content: space-around;
     background-color: #1f1f1f;
     padding-top: 20px;
     color: whitesmoke;
-}
-footer p {
-    margin-top: 250px;
+
 }
