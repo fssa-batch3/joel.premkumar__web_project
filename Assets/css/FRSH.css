@@ -120,10 +120,7 @@ nav {
 }
 
 span {
-  color: green;
-  animation-name: change;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
+    color: green;
 }
 
 #Shares {
@@ -142,7 +139,11 @@ span {
         transform: translateY(0px);
     }
 }
-
+span{
+  animation-name: change;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
 @keyframes change{
     0%{color: #04AA6D;}
     100%{color: #f44336;}
@@ -319,7 +320,29 @@ span {
         width: 4%;
     }
 }
-
+@media only screen and (max-width:400px) {
+    footer{
+        width: 1100px;
+     } 
+    header {
+        width: 1100px;
+    }
+    #Shares {
+        display: flex;
+        flex-direction: column;
+        margin-left: 150px;
+        padding: 10%;
+    }
+    #Fractional {
+        width: 600px;
+    }
+    #graph {
+        margin-left: -30px;
+    }
+    body {
+        font-weight:100 ;
+    }
+}
 footer {
     display: flex;
     justify-content: space-around;

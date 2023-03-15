@@ -1,0 +1,27 @@
+{
+  "name": "investx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "http-server ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoelJovin/100-Days-Project.git"
+  },
+  "author": "JoelJovin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoelJovin/100-Days-Project/issues"
+  },
+  "homepage": "https://github.com/JoelJovin/100-Days-Project#readme",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "husky": "^8.0.3"
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>InvestX login</title>
+    <link rel="stylesheet" type="text/css" href="try.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="name" id="name" placeholder="User name" required>
+                <input type="email" name="email" id="mail" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <button onclick="signup()">Sign up</button>
+            </form>
+        </div>
+        <div class="login">
+            <form id="login_page">
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="text" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="pass" name="pass" placeholder="Password" required>
+                <button id="login">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        function signup() {
+
+            let username = document.getElementById("name").value;
+            let email = document.getElementById("mail").value;
+            let pass = document.getElementById("password").value;
+            let user_data = {
+                "user_name": username,
+                "email": email,
+                "password": pass
+            }
+            let arr = localStorage.getItem("arr") ? JSON.parse(localStorage.getItem("arr")) : [];
+            arr.push(user_data)
+            localStorage.setItem("arr", JSON.stringify(arr))
+        }
+
+        document.getElementById("login_page").addEventListener("submit", (e) => {
+            e.preventDefault();
+            check();
+        })
+
+
+
+        function check() {
+            // i.preventDefault()
+            let user_email = document.getElementById("email").value
+            let pass = document.getElementById("pass").value
+
+            let details = JSON.parse(localStorage.getItem("arr"))
+
+            let datas = {
+                "user_email": user_email,
+                "password": pass
+            }
+            let res;
+
+            details.find(e => {
+
+                if (e["email"] == user_email && e["password"] == pass) {
+                    return res = 1;
+                    // alert("crt");
+                }
+                else {
+                    return res = 0;
+                    // alert("wr");
+                }
+            })
+            if (res == 1) {
+                // alert("logged i @
+                localStorage.setItem("profile_details", JSON.stringify(datas))
+                window.location.href = "Pages/profile.html";
+            }
+            else {
+                alert("error")
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
