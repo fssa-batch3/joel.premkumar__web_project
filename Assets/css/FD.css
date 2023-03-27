@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+    color: aliceblue;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+.FD {
+    display: flex;
+    justify-content: center;
+}
+.FD > img{
+    margin-right: 2%;
+    width: 150px;
+}
+.deposit{
+    text-align: center;
+}
+.SBI{
+    background-color: whitesmoke;
+}
+.firstSection{
+    display: flex;
+}
+.firstSection{
+    width: 100px;
+    height: 100px;
+}

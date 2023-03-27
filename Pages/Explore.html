@@ -51,15 +51,22 @@
         <img src="../Assets/images/SHOP@2x.jpg" alt="apple icon">
     </div>
     <br>
-    <h2>₹10000 in Freshworks Inc*</h2>
+    <h2>₹<output id="amount" name="amount" for="invested">1000</output> in Freshworks Inc*</h2>
     <br>
-    <label><input type="range" class="range"></label>
+    <input type="range" id="SIP" name="invested" min="1000" max="50000" value="100" step="1000" class="range">
     <br>
     <h3>You would have </h3>
     <h2>₹35.28k <span>(in 5yrs)</span> </h2>
     <button id="now"><a href="FRSH.html">Invest Now</a> </button>
     <p>*Disclaimer: Returns shown above are on the basis of back tested data</p>
 </div>
+<script>
+function investedamount() {
+let investedamount = document.getElementById('SIP').value;
+document.getElementById('amount').innerHTML = investedamount;
+return investedamount;}
+document.getElementById('SIP').addEventListener('change', investedamount)
+</script>
 <br>
 <!-- Explore by Collection -->
 <main>
