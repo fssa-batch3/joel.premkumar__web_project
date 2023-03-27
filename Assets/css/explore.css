@@ -226,3 +226,15 @@ footer {
 footer p {
     margin-top: 250px;
 }
+#year_slider{
+    border: .5px solid black;
+    border-radius: 20px;
+    display: flex;
+    width: 100px;
+    height:25px
+}
+#year_slider button{
+    width:30px;
+    height:26px;
+    border:none;
+}

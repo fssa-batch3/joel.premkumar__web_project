@@ -33,7 +33,7 @@
         </div>
 
     </header>
-</body>
+
 <!-- What if you've Invested -->
 <div id="what">
     <h1>What if you had invested</h1>
@@ -53,20 +53,19 @@
     <br>
     <h2>₹<output id="amount" name="amount" for="invested">1000</output> in Freshworks Inc*</h2>
     <br>
-    <input type="range" id="SIP" name="invested" min="1000" max="50000" value="100" step="1000" class="range">
+    <input type="range" id="SIP" name="invested" min="1000" max="50000" value="1000" step="1000" class="range">
     <br>
+<div id="year_slider">
+    <button id="three">3</button>
+    <button id="five">5</button>
+    <button id="ten">10</button>
+</div>
+
     <h3>You would have </h3>
-    <h2>₹35.28k <span>(in 5yrs)</span> </h2>
+    <h2 id="display_amt">₹35.28k <span>(in 5yrs)</span> </h2>
     <button id="now"><a href="FRSH.html">Invest Now</a> </button>
     <p>*Disclaimer: Returns shown above are on the basis of back tested data</p>
 </div>
-<script>
-function investedamount() {
-let investedamount = document.getElementById('SIP').value;
-document.getElementById('amount').innerHTML = investedamount;
-return investedamount;}
-document.getElementById('SIP').addEventListener('change', investedamount)
-</script>
 <br>
 <!-- Explore by Collection -->
 <main>
@@ -346,5 +345,144 @@ document.getElementById('SIP').addEventListener('change', investedamount)
         <!-- </div> -->
         <p>All Rights Reserved | © Copyright 2022</p>
     </footer>
+</body>
+
+<script>
+    let amount=document.getElementById("amount").innerText;
+    console.log(amount);
+    // let investedamount = document.getElementById('SIP').value;
+
+
+
+
+
+    let invest = [
+        {
+            "name": "freshworks",
+            "amount": "5.68",
+            "percentage": "467.77",
+
+        },
+
+        {
+            "name": "apple",
+            "amount": "2.56",
+            "percentage": "155.72",
+
+        },
+
+        {
+            "name": "amazon",
+            "amount": "5.09",
+            "percentage": "1.75",
+
+        },
+
+        {
+            "name": "google",
+            "amount": "9.15",
+            "percentage": "82.95",
+
+        },
+
+        {
+            "name": "adobe",
+            "amount": "5.95",
+            "percentage": "19.03",
+
+        },
+
+        {
+            "name": "microsoft",
+            "amount": "9.36",
+            "percentage": "87.18",
+
+        },
+
+        {
+            "name": "invesco",
+            "amount": "8.43",
+            "percentage": "68.65",
+
+        },
+
+        {
+            "name": "niidia",
+            "amount": "21.82",
+            "percentage": "336.49",
+
+        },
+
+        {
+            "name": "broadcom",
+            "amount": "16.31",
+            "percentage": "226.11",
+
+        },
+
+        
+    ]
+
+// console.log(values)
+let check;
+    function sipCalculator(installment, rate, years) {
+        const monthlyRate = rate / 100 / 12;
+        const months = years * 12;
+
+        const totalInvested = installment * months;
+        let finalValue = installment * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
+        finalValue = parseInt(finalValue.toFixed(0));
+        const wealthGained = finalValue - totalInvested
+        return {totalInvested, finalValue, wealthGained}
+    }
+
+
+
+    
+    function investedamount() {
+        let investedamount = document.getElementById('SIP').value;
+        document.getElementById('amount').innerHTML = investedamount;
+        return investedamount;
+    }
+    // let cnt=1;
+    document.getElementById('SIP').addEventListener('change',(e)=>{
+
+        investedamount();
+        console.log(investedamount());
+        // console.log(cnt*invest[0]["amount"]);
+        // cnt++;
+        let amt=document.getElementById("display_amt");
+        check=investedamount()*Number(invest[0]["amount"]);
+        console.log(check)
+    amt.innerText= check+ "k";
+    }
+    );
+    let years=document.querySelectorAll("#year_slider button");
+console.log(years)
+// five_year.addEventListener("click",(e)=>{
+//     console.log(five_year.innerText);
+// })
+let values;
+
+years.forEach((e)=>{
+    e.addEventListener("click",(el)=>{
+        // console.log(el.target.innerText);
+        values=el.target.innerText;
+        // let amt=document.getElementById("display_amt").innerText;
+        console.log(check)
+        console.log(sipCalculator(check,10,values))
+    })
+});
+
+    // console.log(amount)
+
+
+    // for(let i=0;i<=invest.length;i++){
+
+    // }
+    // let amt=document.getElementById("display_amt");
+    // amt.innerText=invest[0]["amount"] + "k";
+    // console.log(invest[0]["amount"]);
+</script>
 
 </html>

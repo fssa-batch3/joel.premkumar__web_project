@@ -11,7 +11,11 @@
     <output name="result" for="length" id="result">0</output>
     <input type="number" placeholder="Rate of interest" id="r">
     <input type="number" placeholder="Number of years" id="y">
-    //15.23k//[]
+    <button id="three">3y</button>
+    <button id="five">5y</button>
+    <button id="ten">10y</button>
+
+
     <button id="button">Calculate</button>
     <p id="result"></p>
 
@@ -45,14 +49,18 @@ document.getElementById('i').addEventListener('change', charLength)//0
 
         const data = sipCalculator(installment, rate, years);
         const result = `
-        Final Value: $${data.finalValue},
-        Total Invested: $${data.totalInvested},
-        Wealth Gained: $${data.wealthGained}`;
+        Final Value: ₹${data.finalValue},
+        Total Invested: ₹${data.totalInvested},
+        Wealth Gained: ₹${data.wealthGained}`;
         document.querySelector("#result").innerHTML = result
     }
 
     document.querySelector("#button").addEventListener("click", render);
+
+// How to create SIP Calculator in javascript?
     </script>
+
+
 
 </body>
 </html>
