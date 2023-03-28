@@ -3,6 +3,7 @@ body {
     color: aliceblue;
     margin-right: 15%;
     margin-left: 15%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .FD {
     display: flex;
@@ -17,11 +18,21 @@ body {
 }
 .SBI{
     background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding:  0px 20px;
+    border-radius: 8px;
 }
 .firstSection{
     display: flex;
+    justify-content: space-evenly;
 }
-.firstSection{
-    width: 100px;
-    height: 100px;
+.secondSection{
+    display: flex;
+    justify-content: space-around;
+}
+.sbilogo {
+    mar
 }
