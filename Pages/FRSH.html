@@ -14,6 +14,7 @@
 
 <body>
 <!-- Header -->
+
     <header>
         <div id="header">
             <a href="../index.html"><img src="../Assets/images/InvestX New.png" alt="Logo Comes here" height="45px"></a>
@@ -41,20 +42,20 @@
     <div id="Overview">
         <div id="frshlogo">
             <br>
-            <img src="../Assets/images/FRSH@2x.jpg" alt="FRSH Logo comes here">
-            <h2>FRSH</h2>
+            <a><img id="comp_img"  alt="FRSH Logo comes here"></a>
+            <h2 id="company_name"></h2>
         </div>
         <div id="price">
-            <h1>Freshworks (FRSH)</h1>
-            <h5>$14.72 <span>5.37%▲</span></h5>
-            <p>Market is closed-opens on 8 PM, 12 Dec 2022</p>
+            <h1 id="Compan"></h1>
+            <h5 id="stock_price"><span>5.37%▲</span></h5>
+            <p>Market is closed - opens on 7 PM, 25 Apr 2023</p>
         </div>
     </div>
     <!-- Buy Shares -->
     <div id="Shares">
         <img id="graph" src="../Assets/images/FRSH GRAPH 1WEEK.png" alt="FRSH Graph">
         <div id="Fractional">
-            <h3>Great News! Now you can buy<br> fractional shares of Freshworks</h3>
+            <!-- <h3>Great News! Now you can buy<br> fractional shares of Freshworks</h3> -->
             <h4>What is Fractional Shares?</h4>
             <p>Fractional shares are pieces of one full share of<br> a company or exchange-traded fund (ETF).</p>
             <p>In INDmoney, you can buy Freshworks stock in <br> any dollar amount, or any other stock you want.</p>
@@ -145,18 +146,6 @@
 
     <pre>
 
-
-
-
-
-
-
-
-
-
-
-
-
                 </pre>
                 <!-- Footer -->
     <footer>
@@ -187,7 +176,144 @@
         <p>All Rights Reserved | © Copyright 2022</p>
     </footer>
 
+      <script>
+            // <!-- <h3>Great News! Now you can buy<br> fractional shares of Freshworks</h3> -->
+          
+          let paragraph = document.createElement("h3");
+              paragraph.innerHTML= "Great News! Now you can buy <br> fractional shares of Freshworks";
+              document.querySelector("#Fractional").prepend(paragraph);
 
+        //  image
+        let image = document.createElement("img");
+            image.setAttribute("src","..");
+            // varaible name.append("image")
+
+    //    a tag
+         let a_tag = document.createElement("a");
+             a_tag.setAttribute("href","sorce");
+            //  variable .append("a_tag")
+
+
+    // button
+     let button = document.createElement("button");
+        button.setAttribute("id","");
+        // variable .append("button")
+
+
+
+        let company1 = [
+
+{
+    company_name : "Apple",
+    company_image : "../Assets/images/AAPL@2x.jpg",
+    nick_name : "AAPL",
+    todays_price : "$165.33"
+},
+
+{
+    company_name : "Adobe",
+    company_image : "../Assets/images/ADBE@2x.jpg",
+    nick_name : "ADBE",
+    todays_price : "$377.34"
+},
+
+{
+    company_name : "Amazon",
+    company_image : "../Assets/images/AMZN@2x.jpg",
+    nick_name : "AMZN",
+    todays_price : "$106.21"
+},
+
+{
+    company_name : "Google",
+    company_image : "../Assets/images/GOOGL@2x.jpg",
+    nick_name : "Google",
+    todays_price : "$165.33"
+},
+
+{
+    company_name : "Freshworks",
+    company_image : "../Assets/images/FRSH@2x.jpg",
+    nick_name : "FRSH",
+    todays_price : "$14.33"
+},
+
+{
+    company_name : "Microsoft",
+    company_image : "../Assets/images/MSFT@2x.jpg",
+    nick_name : "MSFT",
+    todays_price : "$281.77"
+},
+
+{
+    company_name : "Qualcom",
+    company_image : "../Assets/images/QQQ@2x.jpg",
+    nick_name : "QCOM",
+    todays_price : "$117.35"
+},
+
+{
+    company_name : "Tesla",
+    company_image : "../Assets/images/TSLA@2x.jpg",
+    nick_name : "TSLA",
+    todays_price : "$162.55"
+},
+
+{
+    company_name : "Texas",
+    company_image : "../Assets/images/TXN@2x.jpg",
+    nick_name : "TXN",
+    todays_price : "$175.9"
+},
+{
+    company_name : "Shopfiy",
+    company_image : "../Assets/images/SHOP@2x.jpg",
+    nick_name : "SHOP",
+    todays_price : "$48.02"
+},
+
+]
+
+
+    
+
+
+
+    const url = window.location.search;
+    const urlParams = new URLSearchParams(url)
+    let name = urlParams.get('name');
+    console.log(name)
+
+    let details = company1.find(e =>{
+        let nam = e["company_name"]
+
+        if(name === nam){
+            return true ;
+        }
+        else{
+            return false;
+        }
+    });
+
+    console.log(details);
+
+    let nick_name = document.getElementById("Compan")
+    nick_name.innerText = details.nick_name
+
+    let company_image = document.getElementById("comp_img")
+    company_image.setAttribute("src", details.company_image)
+
+    let company_name = document.getElementById("company_name")
+    company_name.innerText = details.company_name
+
+    let todays_price = document.getElementById("stock_price")
+    todays_price.innerText = details.todays_price
+
+
+    
+
+    
+      </script>
 
 </body>
 

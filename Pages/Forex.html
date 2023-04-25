@@ -35,7 +35,7 @@
             <h4>Enter Amount</h4>
             <input type="number" id="Value" placeholder="Enter ₹ INR Value">
             <h5>Total amount you will get</h5>
-            <h3>$78.24</h3>
+            <h3 id="dollar">$78.24</h3>
             <button id="btn">Add Money</button>
         </div>
     </div>
@@ -77,6 +77,21 @@
         <!-- </div> -->
         <p>All Rights Reserved | © Copyright 2022</p>
     </footer>
+
+    <script>
+        let rupee=document.querySelector("#Value");
+        let dollar_text=document.querySelector("#dollar");
+        rupee.addEventListener("keyup",(e)=>{
+            // console.log(e.target.value)
+            let dollars=e.target.value/81.91;
+            console.log(dollars)
+            dollar.innerText="$"+dollars.toFixed(2)
+            
+        })
+        // console.log(rupee_value)
+// console.log(rupees + " Rupees");
+    </script>
+
 </body>
 
 </html>

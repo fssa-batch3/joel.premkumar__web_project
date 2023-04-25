@@ -38,6 +38,11 @@ nav {
 
 }
 
+#company_name{
+    font-size: 30px;
+}
+
+
 #header nav a,
 #login {
     color: white;
@@ -227,14 +232,21 @@ footer p {
     margin-top: 250px;
 }
 #year_slider{
-    border: .5px solid black;
     border-radius: 20px;
     display: flex;
-    width: 100px;
-    height:25px
 }
-#year_slider button{
+
+#three,#five,#ten{
+    border-radius: 5px;
+    background-color: rgb(43, 169, 241);
+    color: white;
+    margin-right: 5px;
+    width: 100px;
+    padding: 10px;
+}
+
+/* #year_slider button{
     width:30px;
     height:26px;
     border:none;
-}
+} */

@@ -37,6 +37,10 @@
     <!-- What if you've Invested -->
     <div id="what">
         <h1>What if you had invested</h1>
+        <h2>₹<output id="amount" name="amount" for="invested">1000</output> in <span id="company_name">Apple </span>Inc*
+        </h2>
+        <input type="range" id="SIP" name="invested" min="1000" max="50000" value="1000" step="1000" class="range">
+        <br>
         <br>
         <div class="image">
             <img src="../Assets/images/AAPL@2x.jpg" class="row_images" id="apple" alt="apple icon">
@@ -51,19 +55,16 @@
             <img src="../Assets/images/SHOP@2x.jpg" class="row_images" id="shopify" alt="apple icon">
         </div>
         <br>
-        <h2>₹<output id="amount" name="amount" for="invested">1000</output> in <span id="company_name"></span>Inc*</h2>
-        <br>
-        <input type="range" id="SIP" name="invested" min="1000" max="50000" value="1000" step="1000" class="range">
         <br>
         <div id="year_slider">
             <button id="three">3</button>
             <button id="five">5</button>
             <button id="ten">10</button>
         </div>
-
+        <br>
         <h3>You would have </h3>
-        <h2 id="display_amt">₹35.28k <span>(in 5yrs)</span> </h2>
-        <button id="now"><a href="FRSH.html">Invest Now</a> </button>
+        <h2 id="display_amt">₹3000 <span>(in 3yrs)</span> </h2>
+        <button id="now"><a id="param">Invest Now</a> </button>
         <p>*Disclaimer: Returns shown above are on the basis of back tested data</p>
     </div>
     <br>
@@ -312,7 +313,7 @@
         <br>
         <pre>
 
-
+            <a href="../Assets/images/FRSH@2x.jpg"></a>
 
 
 
@@ -348,93 +349,97 @@
 </body>
 
 <script>
-    let amount = document.getElementById("amount").innerText;
-    console.log(amount);
+
+
+    // write a javascript code to input range
+
+    // let amount = document.getElementById("amount").innerText;
+    // console.log(amount);
     // let investedamount = document.getElementById('SIP').value;
 
 
 
 
 
-    let invest = [
-        {
-            "name": "freshworks",
-            "amount": "5.68",
-            "percentage": "467.77",
+    // let invest = [
+    //     {
+    //         "name": "freshworks",
+    //         "amount": "5.68",
+    //         "percentage": "467.77",
 
-        },
+    //     },
 
-        {
-            "name": "apple",
-            "amount": "2.56",
-            "percentage": "155.72",
+    //     {
+    //         "name": "apple",
+    //         "amount": "2.56",
+    //         "percentage": "155.72",
 
-        },
+    //     },
 
-        {
-            "name": "amazon",
-            "amount": "5.09",
-            "percentage": "1.75",
+    //     {
+    //         "name": "amazon",
+    //         "amount": "5.09",
+    //         "percentage": "1.75",
 
-        },
+    //     },
 
-        {
-            "name": "google",
-            "amount": "9.15",
-            "percentage": "82.95",
+    //     {
+    //         "name": "google",
+    //         "amount": "9.15",
+    //         "percentage": "82.95",
 
-        },
+    //     },
 
-        {
-            "name": "adobe",
-            "amount": "5.95",
-            "percentage": "19.03",
+    //     {
+    //         "name": "adobe",
+    //         "amount": "5.95",
+    //         "percentage": "19.03",
 
-        },
+    //     },
 
-        {
-            "name": "microsoft",
-            "amount": "9.36",
-            "percentage": "87.18",
+    //     {
+    //         "name": "microsoft",
+    //         "amount": "9.36",
+    //         "percentage": "87.18",
 
-        },
+    //     },
 
-        {
-            "name": "invesco",
-            "amount": "8.43",
-            "percentage": "68.65",
+    //     {
+    //         "name": "invesco",
+    //         "amount": "8.43",
+    //         "percentage": "68.65",
 
-        },
+    //     },
 
-        {
-            "name": "niidia",
-            "amount": "21.82",
-            "percentage": "336.49",
+    //     {
+    //         "name": "niidia",
+    //         "amount": "21.82",
+    //         "percentage": "336.49",
 
-        },
+    //     },
 
-        {
-            "name": "broadcom",
-            "amount": "16.31",
-            "percentage": "226.11",
+    //     {
+    //         "name": "broadcom",
+    //         "amount": "16.31",
+    //         "percentage": "226.11",
 
-        },
+    //     },
 
 
-    ]
+    // ]
 
     // console.log(values)
     let check;
-    function sipCalculator(installment, rate, years) {
-        const monthlyRate = rate / 100 / 12;
-        const months = years * 12;
+    // function sipCalculator(installment, rate, years) {
+    //     const monthlyRate = rate / 100 / 12;
+    //     const months = years * 12;
 
-        const totalInvested = installment * months;
-        let finalValue = installment * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
-        finalValue = parseInt(finalValue.toFixed(0));
-        const wealthGained = finalValue - totalInvested
-        return { totalInvested, finalValue, wealthGained }
-    }
+    //     const totalInvested = installment * months;
+    //     let finalValue = installment * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
+    //     finalValue = parseInt(finalValue.toFixed(0));
+    //     const wealthGained = finalValue - totalInvested
+    //     return { totalInvested, finalValue, wealthGained }
+    // }
 
 
 
@@ -442,40 +447,47 @@
     function investedamount() {
         let investedamount = document.getElementById('SIP').value;
         document.getElementById('amount').innerHTML = investedamount;
-        return investedamount;
+       
     }
-    // let cnt=1;
-    document.getElementById('SIP').addEventListener('change', (e) => {
-
+    document.getElementById('SIP').addEventListener('input', (e) => {
         investedamount();
-        console.log(investedamount());
-
-        let amt = document.getElementById("display_amt");
-        check = investedamount() * Number(invest[0]["amount"]);
-        console.log(check);
-
-        amt.innerText = check + "k";
     }
-    );
-    let years = document.querySelectorAll("#year_slider button");
-    console.log(years)
-    // five_year.addEventListener("click",(e)=>{
-    //     console.log(five_year.innerText);
-    // })
-    let values;
+    )
+            //     let returnamt = investedamount;
 
-    years.forEach((e) => {
-        e.addEventListener("click", (el) => {
-            // console.log(el.target.innerText);
-            values = el.target.innerText;
-            // let amt=document.getElementById("display_amt").innerText;
-            console.log(check)
-            let sum = sipCalculator(check, 10, values);
-            console.log(sum["totalInvested"])
-            let amt = document.getElementById("display_amt");
-            amt.innerText = sum["totalInvested"] + "k"
-        })
-    });
+            //     let amt = document.getElementById("display_amt");
+            //     check = returnamt * Number(invest["amount"]);
+            //     amt.innerText = check + "k";
+            //     return investedamount;
+        
+    // let cnt = 1;
+    //     function displayamt(returnamt) {
+    //         let amt = document.getElementById("display_amt");
+    //         check = investedamount() * Number(SIP[0]["amount"]);
+    //         amt.innerText = check + "k";
+    //     }
+
+
+
+        // let amt = document.getElementById("display_amt");
+        // check = investedamount() * Number(SIP[0]["amount"]);
+        // amt.innerText = check + "k";
+    
+
+    // let values;
+
+    // years.forEach((e) => {
+    //     e.addEventListener("click", (el) => {
+    //         // console.log(el.target.innerText);
+    //         values = el.target.innerText;
+    //         // let amt=document.getElementById("display_amt").innerText;
+    //         console.log(check)
+    //         let sum = sipCalculator(check, 10, values);
+    //         console.log(sum["totalInvested"])
+    //         let amt = document.getElementById("display_amt");
+    //         amt.innerText = sum["totalInvested"] + "k"
+    //     })
+    // });
 
     // console.log(amount)
 
@@ -488,35 +500,255 @@
     // console.log(invest[0]["amount"]);
 
     let company = ["Apple", "Adobe", "Amazon", "Google", "Freshworks", "Microsoft", "Qualcom", "Tesla", "Texas", "Shopfiy"]
+    let percentage = {
+        "Apple": [3, 5, 10]
+        ,
+        "Adobe": [2.30, 3.30, 9.30]
+        ,
+        "Amazon": [2.60, 3.90, 9.80]
+        ,
+        "Google": [2.70, 3.70, 9.70]
+        ,
+        "Freshworks": [1.9, 3.20, 8.]
+        ,
+        "Microsoft": [2.50, 3.50, 9.50]
+        ,
+        "Qualcom": [2.65, 3.65, 9.55]
+        ,
+        "Tesla": [2.75, 3.80, 9.90]
+        ,
+        "Texas": [2.15, 3.25, 9.88]
+        ,
+        "Shopfiy": [2, 3, 6]
+
+    }
+
+
+
+
+    // <div class="image">
+    //         <img src="../Assets/images/AAPL@2x.jpg" class="row_images" id="apple" alt="apple icon">
+    //         <img src="../Assets/images/ADBE@2x.jpg" class="row_images" id="adobe" alt="apple icon">
+    //         <img src="../Assets/images/AMZN@2x.jpg" class="row_images" id="amazon" alt="apple icon">
+    //         <img src="../Assets/images/GOOGL@2x.jpg" class="row_images" id="google" alt="apple icon">
+    //         <img src="../Assets/images/FRSH@2x.jpg" class="row_images" id="fresh" id="frsh" alt="apple icon">
+    //         <img src="../Assets/images/MSFT@2x.jpg" class="row_images" id="microsoft" alt="apple icon">
+    //         <img src="../Assets/images/QQQ@2x.jpg" class="row_images" id="qualcom" alt="apple icon">
+    //         <img src="../Assets/images/TSLA@2x.jpg" class="row_images" id="tesla" alt="apple icon">
+    //         <img src="../Assets/images/TXN@2x.jpg" class="row_images" id="texas" alt="apple icon">
+    //         <img src="../Assets/images/SHOP@2x.jpg" class="row_images" id="shopify" alt="apple icon">
+    //     </div>
+
+
+    let company1 = [
+
+        {
+            company_name: "Apple",
+            company_image: "../Assets/images/FRSH@2x.jpg",
+            nick_name: "Apple"
+        },
+
+        {
+            company_name: "Adobe",
+            company_image: "../Assets/images/ADBE@2x.jpg",
+            nick_name: "Adobe"
+        },
+
+        {
+            company_name: "Amazon",
+            company_image: "../Assets/images/AMZN@2x.jpg",
+            nick_name: "Amazon"
+        },
+
+        {
+            company_name: "Google",
+            company_image: "../Assets/images/GOOGL@2x.jpg",
+            nick_name: "Google"
+        },
+
+        {
+            company_name: "Freshwork",
+            company_image: "../Assets/images/FRSH@2x.jpg",
+            nick_name: "FRSH"
+        },
+
+        {
+            company_name: "Microsoft",
+            company_image: "../Assets/images/MSFT@2x.jpg",
+            nick_name: "MCTGHJJGK"
+        },
+
+        {
+            company_name: "Qualcom",
+            company_image: "../Assets/images/QQQ@2x.jpg",
+            nick_name: "Qualcom"
+        },
+
+        {
+            company_name: "Tesla",
+            company_image: "../Assets/images/TSLA@2x.jpg",
+            nick_name: "Tesla"
+        },
+
+        {
+            company_name: "Texas",
+            company_image: "../Assets/images/TXN@2x.jpg",
+            nick_name: "Texas"
+        },
+        {
+            company_name: "Shopify",
+            company_image: "../Assets/images/SHOP@2x.jpg",
+            nick_name: "Shopify"
+        },
+
+    ]
+
+
+
 
     let company_name = document.getElementById("company_name")
 
     let row_images = document.querySelectorAll(".row_images");
 
+    let clicked_num;
+
+    let three_amt = document.getElementById("display_amt");
+    let threebtn = document.getElementById("three")
+
+    let five_amt = document.getElementById("display_amt")
+    let fivebtn = document.getElementById("five")
+
+    let ten_amt = document.getElementById("display_amt")
+    let tenbtn = document.getElementById("ten")
 
 
+
+    let selected_value;
 
     row_images.forEach((btn, index) => {
 
 
+
+
+        let param = document.getElementById("param")
+
+
         btn.addEventListener("click", e => {
+            // alert(current_value)
 
-           for(let i=0; i < company.length; i++){
+            if (threebtn.click) {
+                let current_value = document.getElementById("SIP").value
 
-                if(i == index){
-                   company_name.innerText = company[i]+" ";
+                console.log(current_value)
+
+                for (let i = 0; i < company.length; i++) {
+
+
+                    if (i == index) {
+                        company_name.innerText = company[i] + " ";
+                        selected_value = company[i] + ""
+
+                        param.setAttribute("href", "FRSH.html?name=" + selected_value)
+                        // let years = document.querySelectorAll("#year_slider button");
+                        // console.log(years)
+                        // years.forEach((e) => {
+                        //     e.addEventListener("click", (el) => {
+                        //         // console.log(el.target.innerText)
+                        //         return clicked_num=e.target.innerText
+                        //     })
+
+                        // })
+
+                        // console.log(clicked_num)
+                        let company_value = percentage[selected_value][0]
+                        console.log(selected_value);
+                        console.log(company_value);
+                        total_value = company_value * current_value
+                        display_amt.innerHTML = "₹" + total_value
+                    }
                 }
-           }
-            
+            }
+
+
+
 
         })
     })
 
+
+
+
+    fivebtn.addEventListener("click", (e) => {
+
+
+        let current_value = document.getElementById("SIP").value
+        let company_value = percentage[selected_value]
+        console.log(selected_value);
+        console.log(company_value);
+        // console.log(e.innerText)
+        let total_value = company_value[1] * current_value
+        display_amt.innerHTML = "₹" + total_value
+
+
+    }
+
+    )
+
+    tenbtn.addEventListener("click", () => {
+
+
+        let current_value = document.getElementById("SIP").value
+        let company_value = percentage[selected_value]
+        console.log(selected_value);
+        console.log(company_value);
+        let total_value = company_value[2] * current_value
+        display_amt.innerHTML = total_value
+
+
+    }
+
+    )
+
+
+
+
+
+
+
+
+
+    // if(fivebtn.clicked){
+    //     alert("hlo")
+    // }
+
     // row_images.addEventListener("click", e =>{
-        
+    // let accesIndex;
+    // let firstIndexarray=[]
+    // for(let i=0;i<percentage.length;i++){
+    //   accesIndex=  percentage[i][0]
+    //   console.log(accesIndex);
+    // }
     // })
-    
+
     // how to get all the items in a given array for different onclick?
+
+    // let compan  =
+    // [ {"company_name" : "Freshworks",
+    //   "company" : "FRSH",
+    //   "image" : "../Assets/images/FRSH@2x.jpg"},
+
+    // {"company_name" : "Apple",
+    // "company" : "APLE",
+    // "image" : "../Assets/images/AAPL@2x.jpg"
+    // }]
+    // let link = document.getElementById("apple");
+
+    // for (let i = 0; i < company1.length; i++) {
+    //     link.innerHTML = `FRSH.html?name=` + compan[i]["company_name"];
+
+    // }
+
+
 
 </script>
 
