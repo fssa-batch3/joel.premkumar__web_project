@@ -19,7 +19,7 @@
         <div id="header">
             <a href="../index.html"><img src="../Assets/images/InvestX New.png" alt="Logo Comes here" height="45px"></a>
             <nav>
-                <a href="">Explore</a>
+                <a href="">US STOCKS</a>
                 <a href="#">Features</a>
                 <a href="#">Customer Service</a>
             </nav>
@@ -33,38 +33,59 @@
         </div>
 
     </header>
+    
 
     <!-- What if you've Invested -->
     <div id="what">
+        <br>
         <h1>What if you had invested</h1>
-        <h2>₹<output id="amount" name="amount" for="invested">1000</output> in <span id="company_name">Apple </span>Inc*
-        </h2>
+        <h2>₹<output id="amount" name="amount" for="invested">1000</output> in <span id="company_name">Apple </span> Inc*</h2>
         <input type="range" id="SIP" name="invested" min="1000" max="50000" value="1000" step="1000" class="range">
         <br>
         <br>
         <div class="image">
-            <img src="../Assets/images/AAPL@2x.jpg" class="row_images" id="apple" alt="apple icon">
-            <img src="../Assets/images/ADBE@2x.jpg" class="row_images" id="adobe" alt="apple icon">
-            <img src="../Assets/images/AMZN@2x.jpg" class="row_images" id="amazon" alt="apple icon">
-            <img src="../Assets/images/GOOGL@2x.jpg" class="row_images" id="google" alt="apple icon">
-            <img src="../Assets/images/FRSH@2x.jpg" class="row_images" id="fresh" id="frsh" alt="apple icon">
-            <img src="../Assets/images/MSFT@2x.jpg" class="row_images" id="microsoft" alt="apple icon">
-            <img src="../Assets/images/QQQ@2x.jpg" class="row_images" id="qualcom" alt="apple icon">
-            <img src="../Assets/images/TSLA@2x.jpg" class="row_images" id="tesla" alt="apple icon">
-            <img src="../Assets/images/TXN@2x.jpg" class="row_images" id="texas" alt="apple icon">
-            <img src="../Assets/images/SHOP@2x.jpg" class="row_images" id="shopify" alt="apple icon">
+            <img src="../Assets/images/AAPL@2x.jpg" class="row_images selected" id="Apple" alt="apple icon">
+            <img src="../Assets/images/ADBE@2x.jpg" class="row_images" id="Adobe" alt="apple icon">
+            <img src="../Assets/images/AMZN@2x.jpg" class="row_images" id="Amazon" alt="apple icon">
+            <img src="../Assets/images/GOOGL@2x.jpg" class="row_images" id="Google" alt="apple icon">
+            <img src="../Assets/images/FRSH@2x.jpg" class="row_images" id="Freshworks" id="frsh" alt="apple icon">
+            <img src="../Assets/images/MSFT@2x.jpg" class="row_images" id="Microsoft" alt="apple icon">
+            <img src="../Assets/images/QQQ@2x.jpg" class="row_images" id="Qualcom" alt="apple icon">
+            <img src="../Assets/images/TSLA@2x.jpg" class="row_images" id="Tesla" alt="apple icon">
+            <img src="../Assets/images/TXN@2x.jpg" class="row_images" id="Texas" alt="apple icon">
+            <img src="../Assets/images/SHOP@2x.jpg" class="row_images" id="Shopify" alt="apple icon">
         </div>
         <br>
         <br>
-        <div id="year_slider">
-            <button id="three">3</button>
-            <button id="five">5</button>
-            <button id="ten">10</button>
+        <div id="year_slider" class="radio_btns">
+          <div class="radio_div active">
+            <input class="year" type="radio" name="years" id="3" value="3" checked>
+            <label for="3">3Y</label>
+          </div>
+          <div class="radio_div">
+            <input class="year" type="radio" name="years" id="5" value="5">
+            <label for="5">5Y</label>
+          </div>
+          <div class="radio_div">
+            <input class="year" type="radio" name="years" id="10" value="10">
+            <label for="10">10Y</label>
+          </div>
+          
+
+      
+
+           
+
+            <!-- <radio id="three">3</radio>
+            <radio id="five">5</radio>
+            <radio id="ten">10</radio> -->
         </div>
         <br>
         <h3>You would have </h3>
-        <h2 id="display_amt">₹3000 <span>(in 3yrs)</span> </h2>
-        <button id="now"><a id="param">Invest Now</a> </button>
+        <h2 id="display_amt">₹3000</h2>
+        <span class="number_of_years">(in 3 yrs)</span> 
+        <br>
+        <button id="now">Invest Now</button>
         <p>*Disclaimer: Returns shown above are on the basis of back tested data</p>
     </div>
     <br>
@@ -72,6 +93,7 @@
     <main>
         <div id="Color">
             <h1>Explore Collection</h1>
+            <br>
             <div id="Content">
                 <div id="Explore">
                     <div id="collection">
@@ -153,6 +175,7 @@
     <main>
         <div id="Color">
             <h1>Explore by Themes</h1>
+            <br>
             <div id="Content">
                 <div id="Explore">
                     <div id="collection">
@@ -235,6 +258,7 @@
 
         <div id="Color">
             <h1>Invest by Categories</h1>
+            <br>
             <div id="Content">
                 <div id="Explore">
                     <div id="collection">
@@ -351,7 +375,308 @@
 <script>
 
 
-    // write a javascript code to input range
+    
+
+// let company = ["Apple", "Adobe", "Amazon", "Google", "Freshworks", "Microsoft", "Qualcom", "Tesla", "Texas", "Shopfiy"];
+
+    let percentage = {
+
+        "Apple": [3, 5, 10]
+        ,
+        "Adobe": [2.30, 3.30, 9.30]
+        ,
+        "Amazon": [2.60, 3.90, 9.80 , "selected"]
+        ,
+        "Google": [2.70, 3.70, 9.70]
+        ,
+        "Freshworks": [1.9, 3.20, 8.]
+        ,
+        "Microsoft": [2.50, 3.50, 9.50]
+        ,
+        "Qualcom": [2.65, 3.65, 9.55]
+        ,
+        "Tesla": [2.75, 3.80, 9.90]
+        ,
+        "Texas": [2.15, 3.25, 9.88]
+        ,
+        "Shopify": [2, 3, 6]
+
+    }
+
+
+    function investedamount() {
+
+
+
+        let investedamount = document.getElementById('SIP').value;
+
+        document.getElementById('amount').innerHTML = investedamount;
+
+        let company_value = document.querySelector('input[name="years"]:checked').value;
+        let company_id = document.querySelector('input[name="years"]:checked').getAttribute("id");
+
+        display_amt.innerHTML = "₹" + investedamount*company_value;
+        document.querySelector(".number_of_years").innerHTML = `(in ${company_id}yrs)`
+
+        
+
+        return investedamount;
+       
+    }
+
+    document.getElementById('SIP').addEventListener('input', (e) => {
+        investedamount();
+    }
+    )
+
+   let radio_button = document.querySelectorAll('input[type="radio"]');
+
+   console.log(radio_button);
+
+  radio_button.forEach(function(btn){
+
+    btn.addEventListener("click", function(e){
+
+
+        let company_id = document.querySelector('input[name="years"]:checked').getAttribute("id");
+
+       document.getElementById("display_amt").innerHTML = "₹" + investedamount()*btn.value  ;
+        document.querySelector(".number_of_years").innerHTML = `(in ${company_id}yrs)`;
+
+    });
+
+  });
+
+
+
+//   while click on the image 
+
+let all_image = document.querySelectorAll(".row_images");
+
+
+all_image.forEach(function(btn){
+
+    btn.addEventListener("click", function(e){
+
+
+       document.querySelector(".selected")?.classList.remove("selected");
+
+       this.classList.add("selected");
+
+        let get_key = btn.getAttribute("id");
+
+       Object.keys(percentage).find(function(obj){
+
+        if(get_key == obj){
+
+            document.getElementById("company_name").innerHTML = obj;
+
+                radio_button[0].value =  percentage[obj][0];
+                radio_button[1].value =  percentage[obj][1];
+                radio_button[2].value =  percentage[obj][2];
+
+        
+
+        }
+
+       })
+
+       investedamount()
+
+
+    });
+});
+
+
+
+// invest now btn
+
+let invest_btn = document.getElementById("now");
+
+invest_btn.addEventListener("click", function(e){
+
+    let get_company_name = document.getElementById("company_name").innerHTML;
+    
+    window.location.href = "FRSH.html?name="+get_company_name;
+})
+
+// investedamount();
+
+            //     let returnamt = investedamount;
+
+            //     let amt = document.getElementById("display_amt");
+            //     check = returnamt * Number(invest["amount"]);
+            //     amt.innerText = check + "k";
+            //     return investedamount;
+        
+    // let cnt = 1;
+    //     function displayamt(returnamt) {
+    //         let amt = document.getElementById("display_amt");
+    //         check = investedamount() * Number(SIP[0]["amount"]);
+    //         amt.innerText = check + "k";
+    //     }
+
+
+
+        // let amt = document.getElementById("display_amt");
+        // check = investedamount() * Number(SIP[0]["amount"]);
+        // amt.innerText = check + "k";
+    
+
+    // let values;
+
+    // years.forEach((e) => {
+    //     e.addEventListener("click", (el) => {
+    //         // console.log(el.target.innerText);
+    //         values = el.target.innerText;
+    //         // let amt=document.getElementById("display_amt").innerText;
+    //         console.log(check)
+    //         let sum = sipCalculator(check, 10, values);
+    //         console.log(sum["totalInvested"])
+    //         let amt = document.getElementById("display_amt");
+    //         amt.innerText = sum["totalInvested"] + "k"
+    //     })
+    // });
+
+    // console.log(amount)
+
+
+    // for(let i=0;i<=invest.length;i++){
+
+    // }
+    // let amt=document.getElementById("display_amt");
+    // amt.innerText=invest[0]["amount"] + "k";
+    // console.log(invest[0]["amount"]);
+
+   
+
+
+
+
+    // <div class="image">
+    //         <img src="../Assets/images/AAPL@2x.jpg" class="row_images" id="apple" alt="apple icon">
+    //         <img src="../Assets/images/ADBE@2x.jpg" class="row_images" id="adobe" alt="apple icon">
+    //         <img src="../Assets/images/AMZN@2x.jpg" class="row_images" id="amazon" alt="apple icon">
+    //         <img src="../Assets/images/GOOGL@2x.jpg" class="row_images" id="google" alt="apple icon">
+    //         <img src="../Assets/images/FRSH@2x.jpg" class="row_images" id="fresh" id="frsh" alt="apple icon">
+    //         <img src="../Assets/images/MSFT@2x.jpg" class="row_images" id="microsoft" alt="apple icon">
+    //         <img src="../Assets/images/QQQ@2x.jpg" class="row_images" id="qualcom" alt="apple icon">
+    //         <img src="../Assets/images/TSLA@2x.jpg" class="row_images" id="tesla" alt="apple icon">
+    //         <img src="../Assets/images/TXN@2x.jpg" class="row_images" id="texas" alt="apple icon">
+    //         <img src="../Assets/images/SHOP@2x.jpg" class="row_images" id="shopify" alt="apple icon">
+    //     </div>
+
+
+   
+
+
+
+    // let company_name = document.getElementById("company_name")
+
+    // let row_images = document.querySelectorAll(".row_images");
+
+    // let clicked_num;
+
+    // let three_amt = document.getElementById("display_amt");
+    // let threebtn = document.getElementById("three")
+
+    // let five_amt = document.getElementById("display_amt")
+    // let fivebtn = document.getElementById("five")
+
+    // let ten_amt = document.getElementById("display_amt")
+    // let tenbtn = document.getElementById("ten")
+
+
+
+    
+
+
+
+
+    // fivebtn.addEventListener("click", (e) => {
+
+
+    //     let current_value = document.getElementById("SIP").value
+    //     let company_value = percentage[selected_value]
+    //     console.log(selected_value);
+    //     console.log(company_value);
+    //     // console.log(e.innerText)
+    //     let total_value = company_value[1] * current_value
+    //     display_amt.innerHTML = "₹" + total_value
+
+
+    // }
+
+    // )
+
+    // tenbtn.addEventListener("click", () => {
+
+
+    //     let current_value = document.getElementById("SIP").value
+    //     let company_value = percentage[selected_value]
+    //     console.log(selected_value);
+    //     console.log(company_value);
+    //     let total_value = company_value[2] * current_value
+    //     display_amt.innerHTML = total_value
+
+
+    // }
+
+    // )
+
+
+
+
+
+
+
+
+
+    // if(fivebtn.clicked){
+    //     alert("hlo")
+    // }
+
+    // row_images.addEventListener("click", e =>{
+    // let accesIndex;
+    // let firstIndexarray=[]
+    // for(let i=0;i<percentage.length;i++){
+    //   accesIndex=  percentage[i][0]
+    //   console.log(accesIndex);
+    // }
+    // })
+
+    // how to get all the items in a given array for different onclick?
+
+    // let compan  =
+    // [ {"company_name" : "Freshworks",
+    //   "company" : "FRSH",
+    //   "image" : "../Assets/images/FRSH@2x.jpg"},
+
+    // {"company_name" : "Apple",
+    // "company" : "APLE",
+    // "image" : "../Assets/images/AAPL@2x.jpg"
+    // }]
+    // let link = document.getElementById("apple");
+
+    // for (let i = 0; i < company1.length; i++) {
+    //     link.innerHTML = `FRSH.html?name=` + compan[i]["company_name"];
+
+    // }
+
+//     <script>
+// //         let rupee=document.querySelector("#Value");
+// //         let dollar_text=document.querySelector("#dollar");
+// //         rupee.addEventListener("keyup",(e)=>{
+// //             // console.log(e.target.value)
+// //             let dollars=e.target.value/81.91;
+// //             console.log(dollars)
+// //             dollar.innerText="$"+dollars.toFixed(2)
+            
+// //         })
+// //         // console.log(rupee_value)
+// // // console.log(rupees + " Rupees");
+
+// write a javascript code to input range
 
     // let amount = document.getElementById("amount").innerText;
     // console.log(amount);
@@ -429,7 +754,7 @@
     // ]
 
     // console.log(values)
-    let check;
+    // let check;
     // function sipCalculator(installment, rate, years) {
     //     const monthlyRate = rate / 100 / 12;
     //     const months = years * 12;
@@ -442,312 +767,69 @@
     // }
 
 
-
-
-    function investedamount() {
-        let investedamount = document.getElementById('SIP').value;
-        document.getElementById('amount').innerHTML = investedamount;
-       
-    }
-    document.getElementById('SIP').addEventListener('input', (e) => {
-        investedamount();
-    }
-    )
-            //     let returnamt = investedamount;
-
-            //     let amt = document.getElementById("display_amt");
-            //     check = returnamt * Number(invest["amount"]);
-            //     amt.innerText = check + "k";
-            //     return investedamount;
-        
-    // let cnt = 1;
-    //     function displayamt(returnamt) {
-    //         let amt = document.getElementById("display_amt");
-    //         check = investedamount() * Number(SIP[0]["amount"]);
-    //         amt.innerText = check + "k";
-    //     }
-
-
-
-        // let amt = document.getElementById("display_amt");
-        // check = investedamount() * Number(SIP[0]["amount"]);
-        // amt.innerText = check + "k";
-    
-
-    // let values;
-
-    // years.forEach((e) => {
-    //     e.addEventListener("click", (el) => {
-    //         // console.log(el.target.innerText);
-    //         values = el.target.innerText;
-    //         // let amt=document.getElementById("display_amt").innerText;
-    //         console.log(check)
-    //         let sum = sipCalculator(check, 10, values);
-    //         console.log(sum["totalInvested"])
-    //         let amt = document.getElementById("display_amt");
-    //         amt.innerText = sum["totalInvested"] + "k"
-    //     })
-    // });
-
-    // console.log(amount)
-
-
-    // for(let i=0;i<=invest.length;i++){
-
-    // }
-    // let amt=document.getElementById("display_amt");
-    // amt.innerText=invest[0]["amount"] + "k";
-    // console.log(invest[0]["amount"]);
-
-    let company = ["Apple", "Adobe", "Amazon", "Google", "Freshworks", "Microsoft", "Qualcom", "Tesla", "Texas", "Shopfiy"]
-    let percentage = {
-        "Apple": [3, 5, 10]
-        ,
-        "Adobe": [2.30, 3.30, 9.30]
-        ,
-        "Amazon": [2.60, 3.90, 9.80]
-        ,
-        "Google": [2.70, 3.70, 9.70]
-        ,
-        "Freshworks": [1.9, 3.20, 8.]
-        ,
-        "Microsoft": [2.50, 3.50, 9.50]
-        ,
-        "Qualcom": [2.65, 3.65, 9.55]
-        ,
-        "Tesla": [2.75, 3.80, 9.90]
-        ,
-        "Texas": [2.15, 3.25, 9.88]
-        ,
-        "Shopfiy": [2, 3, 6]
-
-    }
-
-
-
-
-    // <div class="image">
-    //         <img src="../Assets/images/AAPL@2x.jpg" class="row_images" id="apple" alt="apple icon">
-    //         <img src="../Assets/images/ADBE@2x.jpg" class="row_images" id="adobe" alt="apple icon">
-    //         <img src="../Assets/images/AMZN@2x.jpg" class="row_images" id="amazon" alt="apple icon">
-    //         <img src="../Assets/images/GOOGL@2x.jpg" class="row_images" id="google" alt="apple icon">
-    //         <img src="../Assets/images/FRSH@2x.jpg" class="row_images" id="fresh" id="frsh" alt="apple icon">
-    //         <img src="../Assets/images/MSFT@2x.jpg" class="row_images" id="microsoft" alt="apple icon">
-    //         <img src="../Assets/images/QQQ@2x.jpg" class="row_images" id="qualcom" alt="apple icon">
-    //         <img src="../Assets/images/TSLA@2x.jpg" class="row_images" id="tesla" alt="apple icon">
-    //         <img src="../Assets/images/TXN@2x.jpg" class="row_images" id="texas" alt="apple icon">
-    //         <img src="../Assets/images/SHOP@2x.jpg" class="row_images" id="shopify" alt="apple icon">
-    //     </div>
-
-
-    let company1 = [
-
-        {
-            company_name: "Apple",
-            company_image: "../Assets/images/FRSH@2x.jpg",
-            nick_name: "Apple"
-        },
-
-        {
-            company_name: "Adobe",
-            company_image: "../Assets/images/ADBE@2x.jpg",
-            nick_name: "Adobe"
-        },
-
-        {
-            company_name: "Amazon",
-            company_image: "../Assets/images/AMZN@2x.jpg",
-            nick_name: "Amazon"
-        },
-
-        {
-            company_name: "Google",
-            company_image: "../Assets/images/GOOGL@2x.jpg",
-            nick_name: "Google"
-        },
-
-        {
-            company_name: "Freshwork",
-            company_image: "../Assets/images/FRSH@2x.jpg",
-            nick_name: "FRSH"
-        },
-
-        {
-            company_name: "Microsoft",
-            company_image: "../Assets/images/MSFT@2x.jpg",
-            nick_name: "MCTGHJJGK"
-        },
-
-        {
-            company_name: "Qualcom",
-            company_image: "../Assets/images/QQQ@2x.jpg",
-            nick_name: "Qualcom"
-        },
-
-        {
-            company_name: "Tesla",
-            company_image: "../Assets/images/TSLA@2x.jpg",
-            nick_name: "Tesla"
-        },
-
-        {
-            company_name: "Texas",
-            company_image: "../Assets/images/TXN@2x.jpg",
-            nick_name: "Texas"
-        },
-        {
-            company_name: "Shopify",
-            company_image: "../Assets/images/SHOP@2x.jpg",
-            nick_name: "Shopify"
-        },
-
-    ]
-
-
-
-
-    let company_name = document.getElementById("company_name")
-
-    let row_images = document.querySelectorAll(".row_images");
-
-    let clicked_num;
-
-    let three_amt = document.getElementById("display_amt");
-    let threebtn = document.getElementById("three")
-
-    let five_amt = document.getElementById("display_amt")
-    let fivebtn = document.getElementById("five")
-
-    let ten_amt = document.getElementById("display_amt")
-    let tenbtn = document.getElementById("ten")
-
-
-
-    let selected_value;
-
-    row_images.forEach((btn, index) => {
-
-
-
-
-        let param = document.getElementById("param")
-
-
-        btn.addEventListener("click", e => {
-            // alert(current_value)
-
-            if (threebtn.click) {
-                let current_value = document.getElementById("SIP").value
-
-                console.log(current_value)
-
-                for (let i = 0; i < company.length; i++) {
-
-
-                    if (i == index) {
-                        company_name.innerText = company[i] + " ";
-                        selected_value = company[i] + ""
-
-                        param.setAttribute("href", "FRSH.html?name=" + selected_value)
-                        // let years = document.querySelectorAll("#year_slider button");
-                        // console.log(years)
-                        // years.forEach((e) => {
-                        //     e.addEventListener("click", (el) => {
-                        //         // console.log(el.target.innerText)
-                        //         return clicked_num=e.target.innerText
-                        //     })
-
-                        // })
-
-                        // console.log(clicked_num)
-                        let company_value = percentage[selected_value][0]
-                        console.log(selected_value);
-                        console.log(company_value);
-                        total_value = company_value * current_value
-                        display_amt.innerHTML = "₹" + total_value
-                    }
-                }
-            }
-
-
-
-
-        })
-    })
-
-
-
-
-    fivebtn.addEventListener("click", (e) => {
-
-
-        let current_value = document.getElementById("SIP").value
-        let company_value = percentage[selected_value]
-        console.log(selected_value);
-        console.log(company_value);
-        // console.log(e.innerText)
-        let total_value = company_value[1] * current_value
-        display_amt.innerHTML = "₹" + total_value
-
-
-    }
-
-    )
-
-    tenbtn.addEventListener("click", () => {
-
-
-        let current_value = document.getElementById("SIP").value
-        let company_value = percentage[selected_value]
-        console.log(selected_value);
-        console.log(company_value);
-        let total_value = company_value[2] * current_value
-        display_amt.innerHTML = total_value
-
-
-    }
-
-    )
-
-
-
-
-
-
-
-
-
-    // if(fivebtn.clicked){
-    //     alert("hlo")
-    // }
-
-    // row_images.addEventListener("click", e =>{
-    // let accesIndex;
-    // let firstIndexarray=[]
-    // for(let i=0;i<percentage.length;i++){
-    //   accesIndex=  percentage[i][0]
-    //   console.log(accesIndex);
-    // }
-    // })
-
-    // how to get all the items in a given array for different onclick?
-
-    // let compan  =
-    // [ {"company_name" : "Freshworks",
-    //   "company" : "FRSH",
-    //   "image" : "../Assets/images/FRSH@2x.jpg"},
-
-    // {"company_name" : "Apple",
-    // "company" : "APLE",
-    // "image" : "../Assets/images/AAPL@2x.jpg"
-    // }]
-    // let link = document.getElementById("apple");
-
-    // for (let i = 0; i < company1.length; i++) {
-    //     link.innerHTML = `FRSH.html?name=` + compan[i]["company_name"];
-
-    // }
-
+//     let company1 = [
+
+// {
+//     company_name: "Apple",
+//     company_image: "../Assets/images/FRSH@2x.jpg",
+//     nick_name: "Apple"
+// },
+
+// {
+//     company_name: "Adobe",
+//     company_image: "../Assets/images/ADBE@2x.jpg",
+//     nick_name: "Adobe"
+// },
+
+// {
+//     company_name: "Amazon",
+//     company_image: "../Assets/images/AMZN@2x.jpg",
+//     nick_name: "Amazon"
+// },
+
+// {
+//     company_name: "Google",
+//     company_image: "../Assets/images/GOOGL@2x.jpg",
+//     nick_name: "Google"
+// },
+
+// {
+//     company_name: "Freshwork",
+//     company_image: "../Assets/images/FRSH@2x.jpg",
+//     nick_name: "FRSH"
+// },
+
+// {
+//     company_name: "Microsoft",
+//     company_image: "../Assets/images/MSFT@2x.jpg",
+//     nick_name: "MCTGHJJGK"
+// },
+
+// {
+//     company_name: "Qualcom",
+//     company_image: "../Assets/images/QQQ@2x.jpg",
+//     nick_name: "Qualcom"
+// },
+
+// {
+//     company_name: "Tesla",
+//     company_image: "../Assets/images/TSLA@2x.jpg",
+//     nick_name: "Tesla"
+// },
+
+// {
+//     company_name: "Texas",
+//     company_image: "../Assets/images/TXN@2x.jpg",
+//     nick_name: "Texas"
+// },
+// {
+//     company_name: "Shopify",
+//     company_image: "../Assets/images/SHOP@2x.jpg",
+//     nick_name: "Shopify"
+// },
+
+// ]
+//     </script>
 
 
 </script>

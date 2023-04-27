@@ -33,10 +33,10 @@
             <h5>Rates will change in: <span>4:59</span></h5>
             <h2>Add Money</h2>
             <h4>Enter Amount</h4>
-            <input type="number" id="Value" placeholder="Enter ₹ INR Value">
+            <input type="text" id="value" pattern="[0-9]" placeholder="Enter ₹ INR Value">
             <h5>Total amount you will get</h5>
-            <h3 id="dollar">$78.24</h3>
-            <button id="btn">Add Money</button>
+            <h3 id="dollar">$0.00</h3>
+            <button id="add_money_btn">Add Money</button>
         </div>
     </div>
     <pre>
@@ -78,19 +78,37 @@
         <p>All Rights Reserved | © Copyright 2022</p>
     </footer>
 
-    <script>
-        let rupee=document.querySelector("#Value");
-        let dollar_text=document.querySelector("#dollar");
-        rupee.addEventListener("keyup",(e)=>{
-            // console.log(e.target.value)
-            let dollars=e.target.value/81.91;
-            console.log(dollars)
-            dollar.innerText="$"+dollars.toFixed(2)
-            
-        })
-        // console.log(rupee_value)
-// console.log(rupees + " Rupees");
-    </script>
+  <script>
+
+    let Rupees = document.getElementById("value");
+    let dollar_show = document.getElementById("dollar");
+
+    let dollar_value = 70;
+
+    let add_money_btn=document.getElementById("add_money_btn")
+
+
+    Rupees.addEventListener("keyup", e => {
+
+let converter = ((Rupees.value)/dollar_value).toFixed(2);
+console.log(typeof converter)
+
+if(Rupees.value>50000){
+    dollar_show.innerHTML=` <div style="color:red" id="dis">
+            <h2 style="color:red">Disclaimer:</h2>
+            <h4 style="color:red">Investment in securities market are subject to market risks,<br> read all the related documents
+                carefully before investing</h4>
+        </div>"$"+ ${converter}` ;
+}
+else{
+    dollar_show.innerHTML= "$"+converter;
+}
+
+
+})
+ 
+
+  </script>
 
 </body>
 

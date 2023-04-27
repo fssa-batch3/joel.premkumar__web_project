@@ -143,6 +143,7 @@ span{
   animation-name: change;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
+  font-size:larger;
 }
 @keyframes change{
     0%{color: #04AA6D;}

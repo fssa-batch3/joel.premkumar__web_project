@@ -67,8 +67,11 @@ header a {
     }
 }
 
-span {
-    color: green;
+#add_money_btn {
+    background-color: green;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #Money input {
