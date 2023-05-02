@@ -36,7 +36,7 @@
             <input type="text" id="value" pattern="[0-9]" placeholder="Enter ₹ INR Value">
             <h5>Total amount you will get</h5>
             <h3 id="dollar">$0.00</h3>
-            <div id="disclaimer">Hi</div>
+            <div id="disclaimer"></div>
             <!-- <button id="add_money_btn">Add Money</button> -->
             <a id="add_money_btn" href="https://cosmofeed.com/vp/6450193e7e7a6800209ec597">Invest Now</a>
         </div>
@@ -102,23 +102,25 @@ if(Rupees.value<82){
     dollar_show.innerHTML= "$"+converter;
 
     disclaimer.innerHTML =` <div style="color:red" id="dis">
-            <h2 style="color:red">Note</h2>
-            <h4 style="color:red">Minimum Amount Required</h4>
+            <p style="color:red">Note:</p>
+            <p style="color:black">Minimum Amount Required ₹82 INR </p>
         </div>` ;
 
 
 }
 
-else if(Rupees.value>50000){
-    dollar_show.innerHTML=` <div style="color:red" id="dis">
-            <h2 style="color:red">Disclaimer:</h2>
-            <h4 style="color:red">Investment in securities market are subject to market risks,<br> read all the related documents
-                carefully before investing</h4>
-        </div>"$"+ ${converter}` ;
-}
-else{
+ if(Rupees.value>82 && Rupees.value<50000){
     dollar_show.innerHTML= "$"+converter;
+
 }
+// else{
+
+//     dollar_show.innerHTML=` <div style="color:red" id="dis">
+//             <h2 style="color:red">Disclaimer:</h2>
+//             <h4 style="color:red">Investment in securities market are subject to market risks,<br> read all the related documents
+//                 carefully before investing</h4>
+//         </div>"$"+ ${converter}` ;
+// }
 
 
 })
