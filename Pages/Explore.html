@@ -50,7 +50,7 @@
             <img src="../Assets/images/GOOGL@2x.jpg" class="row_images" id="Google" alt="apple icon">
             <img src="../Assets/images/FRSH@2x.jpg" class="row_images" id="Freshworks" id="frsh" alt="apple icon">
             <img src="../Assets/images/MSFT@2x.jpg" class="row_images" id="Microsoft" alt="apple icon">
-            <img src="../Assets/images/QQQ@2x.jpg" class="row_images" id="Qualcom" alt="apple icon">
+            <img src="../Assets/images/Qualcom Logo.avif" class="row_images" id="Qualcom" alt="apple icon">
             <img src="../Assets/images/TSLA@2x.jpg" class="row_images" id="Tesla" alt="apple icon">
             <img src="../Assets/images/TXN@2x.jpg" class="row_images" id="Texas" alt="apple icon">
             <img src="../Assets/images/SHOP@2x.jpg" class="row_images" id="Shopify" alt="apple icon">
@@ -415,7 +415,7 @@
         let company_value = document.querySelector('input[name="years"]:checked').value;
         let company_id = document.querySelector('input[name="years"]:checked').getAttribute("id");
 
-        display_amt.innerHTML = "₹" + investedamount*company_value;
+        display_amt.innerHTML = "₹" + investedamount*company_value + " *";
         document.querySelector(".number_of_years").innerHTML = `(in ${company_id}yrs)`
 
         
@@ -440,7 +440,7 @@
 
         let company_id = document.querySelector('input[name="years"]:checked').getAttribute("id");
 
-       document.getElementById("display_amt").innerHTML = "₹" + investedamount()*btn.value  ;
+       document.getElementById("display_amt").innerHTML = "₹" + investedamount()*btn.value;
         document.querySelector(".number_of_years").innerHTML = `(in ${company_id}yrs)`;
 
     });
