@@ -25,19 +25,22 @@
     let email = document.getElementById("email");
     let number = document.getElementById("number");
     let password = document.getElementById("pass");
+    console.log(details);
 
     let res;
 
     arr.find(element => {
         if (element["email"] == details["user_email"] && element["password"] == details["password"]) {
+            console.log(res);
             return res = element;
         }
     });
 
     if (res) {
+        console.log(res,number);
         name.value = res["user_name"]
         email.value = res["email"]
-        number.value = res["number"]
+        number.value = details["mobile_number"]
     }
 
     else {

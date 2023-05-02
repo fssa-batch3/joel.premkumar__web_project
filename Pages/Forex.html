@@ -20,7 +20,7 @@
     <div id="Add">
         <div id="US">
             <img id="coin" src="../Assets/images/coin.webp" alt="COIN INR - Dollar">
-            <h1>Add Money to your<br>US Stock a/c</h1><br>
+            <h1>Forex Exchange<br>INR - USD</h1><br>
             <h4>
                 <ul>
                     <li>Zero Commission on investing</li>
@@ -31,12 +31,14 @@
         </div>
         <div id="Money">
             <h5>Rates will change in: <span>4:59</span></h5>
-            <h2>Add Money</h2>
+            <h2>Zero forex conversion rate</h2>
             <h4>Enter Amount</h4>
             <input type="text" id="value" pattern="[0-9]" placeholder="Enter ₹ INR Value">
             <h5>Total amount you will get</h5>
             <h3 id="dollar">$0.00</h3>
-            <button id="add_money_btn">Add Money</button>
+            <div id="disclaimer">Hi</div>
+            <!-- <button id="add_money_btn">Add Money</button> -->
+            <a id="add_money_btn" href="#">Invest Now</a>
         </div>
     </div>
     <pre>
@@ -83,7 +85,9 @@
     let Rupees = document.getElementById("value");
     let dollar_show = document.getElementById("dollar");
 
-    let dollar_value = 70;
+    let disclaimer=document.getElementById("disclaimer")
+
+    let dollar_value = 81.77;
 
     let add_money_btn=document.getElementById("add_money_btn")
 
@@ -93,7 +97,19 @@
 let converter = ((Rupees.value)/dollar_value).toFixed(2);
 console.log(typeof converter)
 
-if(Rupees.value>50000){
+if(Rupees.value<82){
+
+    dollar_show.innerHTML= "$"+converter;
+
+    disclaimer.innerHTML =` <div style="color:red" id="dis">
+            <h2 style="color:red">Note</h2>
+            <h4 style="color:red">Minimum Amount Required</h4>
+        </div>` ;
+
+
+}
+
+else if(Rupees.value>50000){
     dollar_show.innerHTML=` <div style="color:red" id="dis">
             <h2 style="color:red">Disclaimer:</h2>
             <h4 style="color:red">Investment in securities market are subject to market risks,<br> read all the related documents

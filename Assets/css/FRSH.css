@@ -115,12 +115,15 @@ nav {
 
 #graph {
     width: 750px;
-    margin-left: 130px;
+    margin-left: 70px;
     padding-bottom: 100px;
 }
 
-span {
-    color: green;
+.Frac {
+    color: white;
+}
+.Fracs {
+    color: white;
 }
 
 #Shares {
@@ -139,7 +142,7 @@ span {
         transform: translateY(0px);
     }
 }
-span{
+/* span{
   animation-name: change;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
@@ -148,7 +151,7 @@ span{
 @keyframes change{
     0%{color: #04AA6D;}
     100%{color: #f44336;}
-}
+} */
 
 #Fractional {
     display: flex;
