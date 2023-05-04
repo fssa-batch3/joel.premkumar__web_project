@@ -67,11 +67,26 @@ header a {
     }
 }
 
-#add_money_btn {
+form h3{
+    margin-left: 50px;
+}
+
+form button{
+    margin-left: 30px;
+}
+#add_money_btn{
+
+    width:100px;
     background-color: green;
     color: #fff;
     padding: 10px;
     border-radius: 5px;
+}
+
+#add_money_btn a {
+    background-color: green;
+    color: #fff;
+   
 }
 
 #Money input {
