@@ -376,10 +376,12 @@
 
             // console.log()
             insert_data.push(high)
+            insert_data.sort()
             console.log(insert_data)
 
             // xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
             xValues.push(date)
+            xValues.sort()
 
             new Chart("myChart", {
                 type: "line",
@@ -405,9 +407,13 @@
         function getUsers() {
             fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&interval=15min&symbol=${details.nick_name}&apikey=K9VPJUE6R5HWAUWK`)
                 .then((results) => {
-                    return results.json();
+                    return results.json();//[{}];<name></name>//200 ok response//300 request //400 server resource //500  server
+                })//try{if(a){console.log(a)}} catch {}
+                .catch((error)=>{
+                    console.log(error)
                 })
                 .then((data) => {
+                    
                     for (let i = 0; i < 30; i++) {
                         let check = Array.from(Object.keys(data["Time Series (15min)"]))[i];
                         // console.log(check)
@@ -419,6 +425,7 @@
                     // return data;
                     // Access your data here
                 });
+               
         }
         
 
