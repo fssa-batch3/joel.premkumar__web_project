@@ -159,7 +159,7 @@ nav {
     flex-direction: column;
     align-items: center;
     background-color: black;
-    height: 380px;
+    height: 400px;
     padding: 30px;
     color: whitesmoke;
     border-radius: 10px;
@@ -174,25 +174,33 @@ nav {
     margin-right: 110px;
 }
 
-#Value {
+/* #Value {
     height: 70px;
     width: 300px;
-}
+} */
 
 #Fractional input {
     border: green solid 2px;
-    border-radius: 8px;
+    border-radius: 6px;
+    width: 290px;
+}
+
+#buy_stocks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #btn {
     background-color: rgba(0, 135, 246, 255);
-    border-radius: 15px;
+    border-radius: 10px;
     color: white;
-    width: 200px;
-    height: 60px;
     border-color: blue;
     border-style: none;
     font-weight: bold;
+    padding: 1.0em;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 #Performance img {
@@ -362,4 +370,11 @@ footer {
 
 footer p {
     margin-top: 250px;
+}
+
+.qty_input {
+    height: 40px;
+    width: 100%;
+    padding-left: .5em;
+
 }

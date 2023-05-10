@@ -66,9 +66,13 @@
             <p>In InvestX, you can buy <span id="company_nameeee"></span> stock in <br> any dollar amount, or any other
                 stock you want.</p>
             <br>
-            <input type="number" id="Value" placeholder="Enter Value"> <br>
+
+            <form id="buy_stocks">
+                <input type="number" id="Value" placeholder="Enter quantity " required class="qty_input"> <br>
             <br>
-            <button id="btn"><a href="Forex.html" style="color: aliceblue;">Buy Shares</a></button>
+            <button id="btn" type="submit">Buy Shares</button>
+
+            </form>
         </div>
     </div>
     <!-- Company Performance -->
@@ -182,7 +186,7 @@
                 carefully before investing</h4>
         </div>
         <!-- </div> -->
-        <p>All Rights Reserved | © Copyright 2022</p>
+        <p>All Rights Reserved | © Copyright 2023</p>
     </footer>
 
     <script>
@@ -195,20 +199,20 @@
         //       document.querySelector("#Fractional").prepend(paragraph);
 
         //  image
-        let image = document.createElement("img");
-        image.setAttribute("src", "..");
-        // varaible name.append("image")
+        // let image = document.createElement("img");
+        // image.setAttribute("src", "..");
+        // // varaible name.append("image")
 
-        //    a tag
-        let a_tag = document.createElement("a");
-        a_tag.setAttribute("href", "sorce");
-        //  variable .append("a_tag")
+        // //    a tag
+        // let a_tag = document.createElement("a");
+        // a_tag.setAttribute("href", "sorce");
+        // //  variable .append("a_tag")
 
 
-        // button
-        let button = document.createElement("button");
-        button.setAttribute("id", "");
-        // variable .append("button")
+        // // button
+        // let button = document.createElement("button");
+        // button.setAttribute("id", "");
+        // // variable .append("button")
 
 
 
@@ -428,7 +432,7 @@
                
         }
         
-
+let stock_value;
         console.log(details);
         function element_append(insert_data){
 
@@ -444,6 +448,7 @@
         let todays_price = document.getElementById("stock_price")
         todays_price.innerText = "$" +Number(insert_data[0]).toFixed(2)
         // console.log(insert_data[0])
+        stock_value=Number(insert_data[0]).toFixed(2);
 
         let company_info = document.getElementById("company_info")
         company_info.innerHTML = details.company_info
@@ -505,6 +510,24 @@
             setTimeout(now_time, 1000);
         }
     }
+
+    let invest_page = document.getElementById("buy_stocks");
+
+    invest_page.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+    
+
+        let quantity = document.getElementById("Value").value;
+
+
+        window.location.href=`Forex.html?qty=${quantity}&amt=${stock_value}&name=${name}`
+
+
+    })
+
+   
+
 
         
     </script>
