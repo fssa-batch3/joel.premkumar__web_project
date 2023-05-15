@@ -10,27 +10,33 @@
 </head>
 <body>
 <form>
-    <label for="fullname">Fullname <input type="text" id="name" disabled></label>
-    <label for="email">email <input type="email" id="email" disabled></label>
-    <label for="number">mobile number <input type="text" id="number" disabled></label>
+    <label for="fullname">
+Fullname <input type="text" id="name" disabled>
+</label>
+    <label for="email">
+email <input type="email" id="email" disabled>
+</label>
+    <label for="number">
+mobile number <input type="text" id="number" disabled>
+</label>
     <!-- <label for="pass">password <input type="password" id="pass" disabled></label > -->
     <button id="edit">Edit</button>
     <button id="update">Update</button>
     <button id="delete">delete</button>
 </form>
 <script>
-    let details = JSON.parse(localStorage.getItem("profile_details"));
-    let arr = JSON.parse(localStorage.getItem("arr"));
-    let name = document.getElementById("name");
-    let email = document.getElementById("email");
-    let number = document.getElementById("number");
-    let password = document.getElementById("pass");
+    const details = JSON.parse(localStorage.getItem("profile_details"));
+    const arr = JSON.parse(localStorage.getItem("arr"));
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const number = document.getElementById("number");
+    const password = document.getElementById("pass");
     console.log(details);
 
     let res;
 
     arr.find(element => {
-        if (element["email"] == details["user_email"] && element["password"] == details["password"]) {
+        if (element.email == details.user_email && element.password == details.password) {
             console.log(res);
             return res = element;
         }
@@ -38,9 +44,9 @@
 
     if (res) {
         console.log(res,number);
-        name.value = res["user_name"]
-        email.value = res["email"]
-        number.value = details["mobile_number"]
+        name.value = res.user_name
+        email.value = res.email
+        number.value = details.mobile_number
     }
 
     else {
@@ -65,7 +71,7 @@
         // res["email"]="";
         // res["user_name"]="";//1st
         // arr.splice(,1)
-        let num=arr.indexOf(res);//0
+        const num=arr.indexOf(res);//0
         // console.log()
         // res="";
         // arr.splice(num,1) //3rd splice (1,1,replacement) //0,1,2,"2":"joel"
@@ -74,10 +80,10 @@
         localStorage.setItem("arr", JSON.stringify(arr))
     })
     function update() {
-        res["user_name"] = name.value;
+        res.user_name = name.value;
         if(number.value){
-            res["number"] = number.value;
-            number.value = res["number"]
+            res.number = number.value;
+            number.value = res.number
         }
         console.log(res)
         localStorage.setItem("arr", JSON.stringify(arr))

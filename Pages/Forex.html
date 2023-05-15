@@ -12,7 +12,9 @@
 <body>
     <!-- Header -->
     <header>
-        <a href="../index.html"><img src="../Assets/images/InvestX Logo.png" alt="Logo Comes here" height="45px"></a>
+        <a href="../index.html">
+<img src="../Assets/images/InvestX Logo.png" alt="Logo Comes here" height="45px">
+</a>
     </header>
 
     <br>
@@ -20,37 +22,38 @@
     <div id="Add">
         <div id="US">
             <img id="coin" src="../Assets/images/coin.webp" alt="COIN INR - Dollar">
-            <h1>Forex Exchange<br>INR - USD</h1><br>
-            <h4>
+            <br>
+            <h1>Benefits of Investing<br>in US Stocks</h1>
+            <h3>
                 <ul>
-                    <li>Zero Commission on investing</li>
-                    <li>More Dollars for your Rupees</li>
-                    <li>Best Exchange Rate</li>
+                    <li>Diversify your Portfolio</li>
+                    <li>Gain from Dollar's Appreciation</li>
+                    <li>Opportunity to Invest in High Potential Companies</li>
                 </ul>
-            </h4>
+            </h3>
         </div>
         <form id="Money">
-            <h5>Rates will change in: <span>4:59</span></h5>
-            <h2>Zero forex conversion rate</h2>
-            <h4>Enter Amount</h4>
+            <h5>
+<!-- Rates will change in: <span>4:59</span> -->
+</h5>
+            <h2>Checkout & Proceed:</h2>
+            <img id="stock_img" alt="stock_img">
+            <br>
+            <h3 id="stock_name"></h3>
+            <br>
+                <h3>No. of Stocks:</h3>
                 <h2 id="value"></h2>
-                <h5>Total amount you will get</h5>
+                <br>
+                <h4>Total Payable Amount:</h4>
                 <h3 id="dollar"></h3>
-                <h2 id="rupee"></h2>
                 <div id="disclaimer"></div>
                 <!-- <button id="add_money_btn">Add Money</button> -->
                 
                 <button type="submit" class="invest_btn">Invest Now</button>
-
                         
         </form>
     </div>
     <pre>
-
-
-
-
-
 
     </pre>
     <br>
@@ -58,9 +61,11 @@
     <!-- Footer -->
     <footer>
         <div id="left">
-            <img src="../Assets/images/InvestX New.png" alt="Logo" height="50px" width="160px"> <br>
+            <img src="../Assets/images/InvestX New.png" alt="Logo" height="50px" width="160px">
+ <br>
             <img src="../Assets/images/old-app-store.svg" alt="apple store" height="80px" width="100px">
-            <img src="../Assets/images/old-play-store.svg" alt="play store" height="80px" width="100px"> <br>
+            <img src="../Assets/images/old-play-store.svg" alt="play store" height="80px" width="100px">
+ <br>
             <img src="../Assets/images/facebook.svg" alt="Facebook icon" height="20px" width="20px">
             <img src="../Assets/images/instagram.svg" alt="instagram icon" height="20px" width="20px">
             <img src="../Assets/images/linkedin.svg" alt="linkedin icon" height="20px" width="20px">
@@ -77,7 +82,8 @@
         </div>
         <div id="dis">
             <h2>Disclaimer:</h2>
-            <h4>Investment in securities market are subject to market risks,<br> read all the related documents
+            <h4>
+Investment in securities market are subject to market risks,<br> read all the related documents
                 carefully before investing</h4>
         </div>
         <!-- </div> -->
@@ -85,8 +91,7 @@
     </footer>
 
     <script>
-
-let company1 = [
+const company1 = [
 
 {
     company_name: "Apple",
@@ -220,29 +225,39 @@ let company1 = [
 
 ]
 
-
-
-
-
-
 const url = window.location.search;
 const urlParams = new URLSearchParams(url)
-let name = urlParams.get('name');
-let search = urlParams.get("qty");
-let value = urlParams.get("amt");
+const name = urlParams.get('name');
+const search = urlParams.get("qty");
+const value = urlParams.get("amt");
+
+
+// Stock name code
+let stock_name = document.getElementById("stock_name")
+stock_name.innerText = name
+
+let stock_img = document.getElementById("stock_img")
+
+
+for(let i=0; i<company1.length; i++){
+    if(name == company1[i].company_name){
+        stock_img.setAttribute("src", company1[i].company_image)
+    }
+}
 
 
 
-let details = company1.find(e => {
 
-let nam = e["company_name"]
+const details = company1.find(e => {
+
+const nam = e.company_name
 
 if (name === nam) {
 return true;
 }
-else {
+
 return false;
-}
+
 });
 
 console.log(details,search,value);
@@ -253,48 +268,43 @@ let order ;
                 order =[] 
             }
 
+        document.getElementById("value").innerHTML = `${search} x $${value}`;
+        const dollar_show = document.getElementById("dollar");
 
+        const disclaimer = document.getElementById("disclaimer")
 
+        const dollar_value = 81.77;
+        const add_money_btn_1 = document.getElementById("add_money_btn_1")
 
-        document.getElementById("value").innerText = search;
-        let dollar_show = document.getElementById("dollar");
+        const converter = (search *value).toFixed(2);
+        const ind_amt = (converter * 82).toFixed(2);
 
-        let disclaimer = document.getElementById("disclaimer")
-
-        let dollar_value = 81.77;
-        let add_money_btn_1 = document.getElementById("add_money_btn_1")
-
-
-        let converter = (search *value).toFixed(2);
-
-        dollar_show.innerHTML = "$" + converter;
-
+        dollar_show.innerHTML = `₹${ind_amt}`;
 
         // let add_money_btn=document.getElementById("add_money_btn")
-        let active_user = JSON.parse(localStorage.getItem("profile_details"))
-        let add_money_btn = document.querySelector("form")
+        const active_user = JSON.parse(localStorage.getItem("profile_details"))
+        const add_money_btn = document.querySelector("form")
 // let joel = [{1:2},{4:5}]
         add_money_btn.addEventListener("submit", e => {
 
             e.preventDefault()
 
-            let stock_img = details.company_image;
-            let stock_name = details.company_name;
-            let stock_price = "$" + converter ;
-            let order_date = new Date().toLocaleDateString();
-            let stock_qty = search;
-            let order_id = Math.floor(Math.random()*1000000);
+            const stock_img = details.company_image;
+            const stock_name = details.company_name;
+            const stock_price = `$${converter}` ;
+            const order_date = new Date().toLocaleDateString();
+            const stock_qty = search;
+            const order_id = Math.floor(Math.random()*1000000);
 
             console.log(order_date);
 
-
-            let order_ob= {
-                "stock_img":stock_img,
-                "stock_name":stock_name,
-                "stock_price":stock_price,
-                "order_date":order_date,
-                "stock_qty":stock_qty,
-                "order_id":order_id,
+            const order_ob= {
+                stock_img,
+                stock_name,
+                stock_price,
+                order_date,
+                stock_qty,
+                order_id,
                 "user_email":active_user.user_email
             }
 
@@ -304,7 +314,6 @@ let order ;
 
             window.location.href = "https://cosmofeed.com/vp/6450193e7e7a6800209ec597"
 
-
         })
             // if (Rupees.value == "") {
             //     // alert("please enter a value")
@@ -312,15 +321,10 @@ let order ;
 
             // else {
             // }
-        
-
 
         // Rupees.addEventListener("keyup", e => {
 
         //     // let converter = ((Rupees.value) / dollar_value).toFixed(2);
-
-
-
 
         //     // if (Rupees.value < 82) {
 
@@ -352,17 +356,11 @@ let order ;
         //     }
         //     if (Rupees.value == "" || Rupees.value == null) {
 
-
         //         disclaimer.innerHTML = ""
 
         //     }
 
-
-
-
         // })
-
-
     </script>
 
 </body>

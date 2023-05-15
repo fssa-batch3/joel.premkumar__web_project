@@ -15,7 +15,6 @@
     <button id="five">5y</button>
     <button id="ten">10y</button>
 
-
     <button id="button">Calculate</button>
     <p id="result"></p>
 
@@ -24,7 +23,7 @@
 
     function charLength() {
 
-let charLength = document.getElementById('i').value;//0
+const charLength = document.getElementById('i').value;//0
 document.getElementById('result').innerHTML = charLength;//output=0
 return charLength;//0
 
@@ -36,7 +35,7 @@ document.getElementById('i').addEventListener('change', charLength)//0
         const months = years * 12;
 
         const totalInvested = installment * months;
-        let finalValue = installment * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
+        let finalValue = installment * ((1 + monthlyRate)**months - 1) / monthlyRate;
         finalValue = parseInt(finalValue.toFixed(0));
         const wealthGained = finalValue - totalInvested
         return {totalInvested, finalValue, wealthGained}
@@ -59,8 +58,6 @@ document.getElementById('i').addEventListener('change', charLength)//0
 
 // How to create SIP Calculator in javascript?
     </script>
-
-
 
 </body>
 </html>

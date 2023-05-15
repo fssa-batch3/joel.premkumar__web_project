@@ -16,7 +16,8 @@
 <body>
     <div class="Log">
         <div class="Loginimg">
-            <h1>Invest & SIP<br>
+            <h1>
+Invest & SIP<br>
                 in Stocks, ETFs, FDs<br>
                 Direct plan Mutual Funds
             </h1>
@@ -39,7 +40,6 @@
                         placeholder="Enter your mobile number">
                 </div>
                 <br>
-
 
                 <div class="captcha" id="recaptcha-container"></div>
 
@@ -74,7 +74,6 @@
                 render();
             }
 
-
             const firebaseConfig = {
                 apiKey: "AIzaSyDeShZJE8sgsJPqE16Q5IsOanm8Hnqz-4w",
                 authDomain: "investx-38bc4.firebaseapp.com",
@@ -85,13 +84,10 @@
                 measurementId: "G-PPGTRQJ3TX"
             };
 
-
             firebase.initializeApp(firebaseConfig);
             const auth = firebase.auth()
             const database = firebase.database()
-            var database_ref = database.ref()
-
-
+            const database_ref = database.ref()
 
             function render() {
                 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
@@ -99,70 +95,61 @@
             }
 
             function login() {
-                var mobilenum = document.getElementById("mobilenum").value
+                const mobilenum = document.getElementById("mobilenum").value
                 console.log(mobilenum)
-                var phonenumber = "+91" + mobilenum;
+                const phonenumber = `+91${  mobilenum}`;
                 console.log(phonenumber)
-                firebase.auth().signInWithPhoneNumber(phonenumber, window.recaptchaVerifier).then(function (confirmResult) {
+                firebase.auth().signInWithPhoneNumber(phonenumber, window.recaptchaVerifier).then((confirmResult) => {
                     window.confirmResult = confirmResult;
                     coderesult = confirmResult;
                     console.log(coderesult);
                     document.getElementById("success").innerHTML = "OTP has successfully generated."
-                    var a = document.getElementById("mobileenter");
+                    const a = document.getElementById("mobileenter");
                     a.remove();
-                    var b = document.getElementById("otpenter").style.visibility = "visible";
+                    const b = document.getElementById("otpenter").style.visibility = "visible";
 
-                }).catch(function (error) {
+                }).catch((error) => {
                     document.getElementById("error").innerHTML = error.message;
                 })
 
             }
 
             function verify() {
-                var code = document.getElementById("otpvalue").value;
-                coderesult.confirm(code).then(function (result) {
-                    var user = result.user;
+                const code = document.getElementById("otpvalue").value;
+                coderesult.confirm(code).then((result) => {
+                    const {user} = result;
                     window.location.replace("../logged.html");
-                }).catch(function (error) {
+                }).catch((error) => {
                     document.getElementById("errorotp").innerHTML = error.message;
                 })
             }
 
-
             const btn = document.getElementById("continue")
 
-            btn.addEventListener("click", function () {
+            btn.addEventListener("click", () => {
 
                 const mobile_num = document.getElementById("mobilenum")
 
                 const profile_arr = JSON.parse(localStorage.getItem("profile_details"))
-                let user_arr = JSON.parse(localStorage.getItem("arr"))
+                const user_arr = JSON.parse(localStorage.getItem("arr"))
 
-                profile_arr["mobile_number"] = mobile_num.value
+                profile_arr.mobile_number = mobile_num.value
 
                 localStorage.setItem("profile_details", JSON.stringify(profile_arr))
 
-                let user = user_arr.find(function (obj) {
+                const user = user_arr.find((obj) => {
 
-                    if (profile_arr["user_email"] === obj["email"]) {
-                        obj["mob_num"] = mobile_num.value
-                        localStorage.setItem("arr", JSON.stringify(user))
+        if (profile_arr.user_email === obj.email) {
+            obj.mob_num = mobile_num.value
+            localStorage.setItem("arr", JSON.stringify(user))
 
+        }
 
-
-                    }
-
-                })
+    })
 
                 // window.location.href="profile.html"
 
-
             })
-
-
-
-
-
         </script>
 
 </body>

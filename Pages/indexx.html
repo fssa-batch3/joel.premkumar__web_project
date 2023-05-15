@@ -15,7 +15,7 @@
         <div class="signup">
             <form id="form">
                 <label for="chk" aria-hidden="true">Welcome to InvestX</label>
-                <input type="text" name="name" id="name" placeholder="User name" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  title="UpperCase, LowerCase, Number/SpecialChar and min 8 Chars" required>
+                <input type="text" name="name" id="name" placeholder="User name" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="UpperCase, LowerCase, Number/SpecialChar and min 8 Chars" required>
                 <input type="email" name="email" id="mail" placeholder="Email" required>
                 <input type="password" id="password" name="password" placeholder="Password"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
@@ -33,27 +33,25 @@
         </div>
     </div>
 
-    <script>
-
-        // signup code
+    <script>        // signup code
         function signup() {
 
             // getting the values from input 
-            let username = document.getElementById("name").value;
-            let email = document.getElementById("mail").value;
-            let pass = document.getElementById("password").value;
-            let checkbox = document.getElementById("chk")
-            let arr = localStorage.getItem("arr") ? JSON.parse(localStorage.getItem("arr")) : [];
+            const username = document.getElementById("name").value;
+            const email = document.getElementById("mail").value;
+            const pass = document.getElementById("password").value;
+            const checkbox = document.getElementById("chk")
+            const arr = localStorage.getItem("arr") ? JSON.parse(localStorage.getItem("arr")) : [];
             let res;
 
             // create a object and assign the value
             if (arr == "") {
 
-                let user_data = {
-                    "user_name": username,
-                    "email": email,
-                    "password": pass
-                }
+                const user_data = {
+            "user_name": username,
+            email,
+            "password": pass
+        }
 
                 arr.push(user_data)
                 localStorage.setItem("arr", JSON.stringify(arr))
@@ -62,10 +60,10 @@
 
             }
             else {
-                let check = JSON.parse(localStorage.getItem("arr"))
+                const check = JSON.parse(localStorage.getItem("arr"))
                 check.find(element => {
                     console.log(element)
-                    if (element["email"] == email) {
+                    if (element.email == email) {
                         return res = 1;
                     }
                 })
@@ -73,11 +71,11 @@
                     alert("email already taken")
                 }
                 else {
-                    let user_data = {
-                        "user_name": username,
-                        "email": email,
-                        "password": pass
-                    }
+                    const user_data = {
+                "user_name": username,
+                email,
+                "password": pass
+            }
 
                     arr.push(user_data)
                     localStorage.setItem("arr", JSON.stringify(arr))
@@ -87,17 +85,10 @@
             }
         }
 
-
-
-
         document.getElementById("form").addEventListener("submit", (el) => {
             el.preventDefault()
             signup()
         })
-
-
-
-
 
         // login code 
 
@@ -109,28 +100,28 @@
 
         function check() {
             // i.preventDefault()
-            let user_email = document.getElementById("email").value
-            let pass = document.getElementById("pass").value
+            const user_email = document.getElementById("email").value
+            const pass = document.getElementById("pass").value
 
-            let details = JSON.parse(localStorage.getItem("arr"));
+            const details = JSON.parse(localStorage.getItem("arr"));
 
-            let datas = {
-                "user_email": user_email,
-                "password": pass
-            }
+            const datas = {
+        user_email,
+        "password": pass
+    }
             let res;
 
             details.find(e => {
-                // console.log(e)
-                if ((e["email"] == user_email) && (e["password"] == pass)) {
-                    return res = 1;
-                    // alert("crt");
-                }
-                else {
-                    return res = 0;
-                    alert("Invalid password or email");
-                }
-            });
+        // console.log(e)
+        if ((e.email == user_email) && (e.password == pass)) {
+            return res = 1;
+            // alert("crt");
+        }
+        
+            return res = 0;
+            alert("Invalid password or email");
+        
+    });
 
             if (res == 1) {
                 alert("logged in")
@@ -142,10 +133,7 @@
                 alert("error")
             }
         }
-
-
     </script>
-
 
 </body>
 

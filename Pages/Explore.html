@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../Assets/css/explore.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
 </head>
 
@@ -17,7 +17,9 @@
     <!-- Header -->
     <header>
         <div id="header">
-            <a href="../index.html"><img src="../Assets/images/InvestX New.png" alt="Logo Comes here" height="45px"></a>
+            <a href="../index.html">
+<img src="../Assets/images/InvestX New.png" alt="Logo Comes here" height="45px">
+</a>
             <nav>
                 <a href="">US STOCKS</a>
                 <a href="#">Features</a>
@@ -33,13 +35,15 @@
         </div>
 
     </header>
-    
 
     <!-- What if you've Invested -->
     <div id="what">
         <br>
         <h1>What if you had invested</h1>
-        <h2>₹<output id="amount" name="amount" for="invested">1000</output> in <span id="company_name">Apple </span> Inc*</h2>
+        <h2>
+₹<output id="amount" name="amount" for="invested">1000</output>
+ in <span id="company_name">Apple </span> Inc*
+</h2>
         <input type="range" id="SIP" name="invested" min="1000" max="50000" value="1000" step="1000" class="range">
         <br>
         <br>
@@ -70,11 +74,6 @@
             <input class="year" type="radio" name="years" id="10" value="10">
             <label for="10">10Y</label>
           </div>
-          
-
-      
-
-           
 
             <!-- <radio id="three">3</radio>
             <radio id="five">5</radio>
@@ -110,7 +109,9 @@
                     </div>
                     <div id="Invest">
                         <p>Invest in</p>
-                        <h3>Top Profits<br> Stocks</h3>
+                        <h3>
+Top Profits<br> Stocks
+</h3>
                     </div>
                 </div>
                 <div id="Explore">
@@ -128,7 +129,9 @@
                     </div>
                     <div id="Invest">
                         <p>Invest by</p>
-                        <h3>Your Risk<br> Profile</h3>
+                        <h3>
+Your Risk<br> Profile
+</h3>
                     </div>
                 </div>
                 <div id="Explore">
@@ -164,7 +167,9 @@
                     </div>
                     <div id="Invest">
                         <p>Invest in</p>
-                        <h3>Popular SIP's <br>Stocks</h3>
+                        <h3>
+Popular SIP's <br>Stocks
+</h3>
                     </div>
                 </div>
             </div>
@@ -219,7 +224,9 @@
                     </div>
                     <div id="Invest">
                         <p>Invest in</p>
-                        <h3>Metaverse<br> Stocks</h3>
+                        <h3>
+Metaverse<br> Stocks
+</h3>
                     </div>
                 </div>
                 <div id="Explore">
@@ -339,15 +346,15 @@
 
             <a href="../Assets/images/FRSH@2x.jpg"></a>
 
-
-
     </pre>
         <!-- Footer -->
         <footer>
             <div id="left">
-                <img src="../Assets/images/InvestX New.png" alt="Logo" height="50px" width="160px"> <br>
+                <img src="../Assets/images/InvestX New.png" alt="Logo" height="50px" width="160px">
+ <br>
                 <img src="../Assets/images/old-app-store.svg" alt="apple store" height="80px" width="100px">
-                <img src="../Assets/images/old-play-store.svg" alt="play store" height="80px" width="100px"> <br>
+                <img src="../Assets/images/old-play-store.svg" alt="play store" height="80px" width="100px">
+ <br>
                 <img src="../Assets/images/facebook.svg" alt="Facebook icon" height="20px" width="20px">
                 <img src="../Assets/images/instagram.svg" alt="instagram icon" height="20px" width="20px">
                 <img src="../Assets/images/linkedin.svg" alt="linkedin icon" height="20px" width="20px">
@@ -364,7 +371,8 @@
             </div>
             <div id="dis">
                 <h2>Disclaimer:</h2>
-                <h4>Investment in securities market are subject to market risks,<br> read all the related documents
+                <h4>
+Investment in securities market are subject to market risks,<br> read all the related documents
                     carefully before investing</h4>
             </div>
             <!-- </div> -->
@@ -372,100 +380,88 @@
         </footer>
 </body>
 
-<script>
+<script>// let company = ["Apple", "Adobe", "Amazon", "Google", "Freshworks", "Microsoft", "Qualcom", "Tesla", "Texas", "Shopfiy"];
 
+    const percentage = {
 
-    
+    "Apple": [3, 5, 10]
+    ,
+    "Adobe": [2.30, 3.30, 9.30]
+    ,
+    "Amazon": [2.60, 3.90, 9.80 , "selected"]
+    ,
+    "Google": [2.70, 3.70, 9.70]
+    ,
+    "Freshworks": [1.9, 3.20, 8.]
+    ,
+    "Microsoft": [2.50, 3.50, 9.50]
+    ,
+    "Qualcom": [2.65, 3.65, 9.55]
+    ,
+    "Tesla": [2.75, 3.80, 9.90]
+    ,
+    "Texas": [2.15, 3.25, 9.88]
+    ,
+    "Shopify": [2, 3, 6]
 
-// let company = ["Apple", "Adobe", "Amazon", "Google", "Freshworks", "Microsoft", "Qualcom", "Tesla", "Texas", "Shopfiy"];
-
-    let percentage = {
-
-        "Apple": [3, 5, 10]
-        ,
-        "Adobe": [2.30, 3.30, 9.30]
-        ,
-        "Amazon": [2.60, 3.90, 9.80 , "selected"]
-        ,
-        "Google": [2.70, 3.70, 9.70]
-        ,
-        "Freshworks": [1.9, 3.20, 8.]
-        ,
-        "Microsoft": [2.50, 3.50, 9.50]
-        ,
-        "Qualcom": [2.65, 3.65, 9.55]
-        ,
-        "Tesla": [2.75, 3.80, 9.90]
-        ,
-        "Texas": [2.15, 3.25, 9.88]
-        ,
-        "Shopify": [2, 3, 6]
-
-    }
-
+}
 
     function investedamount() {
 
-
-
-        let investedamount = document.getElementById('SIP').value;
+        const investedamount = document.getElementById('SIP').value;
 
         document.getElementById('amount').innerHTML = investedamount;
 
-        let company_value = document.querySelector('input[name="years"]:checked').value;
-        let company_id = document.querySelector('input[name="years"]:checked').getAttribute("id");
+        const company_value = document.querySelector('input[name="years"]:checked').value;
+        const company_id = document.querySelector('input[name="years"]:checked').getAttribute("id");
 
-        display_amt.innerHTML = "₹" + investedamount*company_value + " *";
+        display_amt.innerHTML = `₹${  (investedamount*company_value).toFixed(2)  } *`;
         document.querySelector(".number_of_years").innerHTML = `(in ${company_id}yrs)`
 
-        
-
-        return investedamount;
+        return  Number(investedamount);
        
     }
 
     document.getElementById('SIP').addEventListener('input', (e) => {
         investedamount();
+        console.log( investedamount().toFixed(2));
     }
     )
 
-   let radio_button = document.querySelectorAll('input[type="radio"]');
+   const radio_button = document.querySelectorAll('input[type="radio"]');
 
    console.log(radio_button);
 
-  radio_button.forEach(function(btn){
+  radio_button.forEach((btn) =>{
 
-    btn.addEventListener("click", function(e){
+    btn.addEventListener("click", (e) =>{
 
+        const company_id = document.querySelector('input[name="years"]:checked').getAttribute("id");
 
-        let company_id = document.querySelector('input[name="years"]:checked').getAttribute("id");
+       document.getElementById("display_amt").innerHTML;
 
-       document.getElementById("display_amt").innerHTML = "₹" + investedamount()*btn.value;
+       console.log((investedamount()*btn.value).toFixed(2));
         document.querySelector(".number_of_years").innerHTML = `(in ${company_id}yrs)`;
 
     });
 
   });
 
-
-
 //   while click on the image 
 
-let all_image = document.querySelectorAll(".row_images");
+const all_image = document.querySelectorAll(".row_images");
 
-
-all_image.forEach(function(btn){
+all_image.forEach((btn) =>{
 
     btn.addEventListener("click", function(e){
-
 
        document.querySelector(".selected")?.classList.remove("selected");
 
        this.classList.add("selected");
 
-        let get_key = btn.getAttribute("id");
+        const get_key = btn.getAttribute("id");
 
-       Object.keys(percentage).find(function(obj){
+       Object.keys(percentage).find((obj) =>{
 
         if(get_key == obj){
 
@@ -475,29 +471,29 @@ all_image.forEach(function(btn){
                 radio_button[1].value =  percentage[obj][1];
                 radio_button[2].value =  percentage[obj][2];
 
-        
-
         }
 
        })
 
-       investedamount()
+
+investedamount()
+
+
+       console.log(investedamount());
 
 
     });
 });
 
-
-
 // invest now btn
 
-let invest_btn = document.getElementById("now");
+const invest_btn = document.getElementById("now");
 
-invest_btn.addEventListener("click", function(e){
+invest_btn.addEventListener("click", (e) =>{
 
-    let get_company_name = document.getElementById("company_name").innerHTML;
+    const get_company_name = document.getElementById("company_name").innerHTML;
     
-    window.location.href = "FRSH.html?name="+get_company_name;
+    window.location.href = `FRSH.html?name=${get_company_name}`;
 })
 
 // investedamount();
@@ -516,12 +512,9 @@ invest_btn.addEventListener("click", function(e){
     //         amt.innerText = check + "k";
     //     }
 
-
-
         // let amt = document.getElementById("display_amt");
         // check = investedamount() * Number(SIP[0]["amount"]);
         // amt.innerText = check + "k";
-    
 
     // let values;
 
@@ -540,18 +533,12 @@ invest_btn.addEventListener("click", function(e){
 
     // console.log(amount)
 
-
     // for(let i=0;i<=invest.length;i++){
 
     // }
     // let amt=document.getElementById("display_amt");
     // amt.innerText=invest[0]["amount"] + "k";
     // console.log(invest[0]["amount"]);
-
-   
-
-
-
 
     // <div class="image">
     //         <img src="../Assets/images/AAPL@2x.jpg" class="row_images" id="apple" alt="apple icon">
@@ -565,11 +552,6 @@ invest_btn.addEventListener("click", function(e){
     //         <img src="../Assets/images/TXN@2x.jpg" class="row_images" id="texas" alt="apple icon">
     //         <img src="../Assets/images/SHOP@2x.jpg" class="row_images" id="shopify" alt="apple icon">
     //     </div>
-
-
-   
-
-
 
     // let company_name = document.getElementById("company_name")
 
@@ -586,15 +568,7 @@ invest_btn.addEventListener("click", function(e){
     // let ten_amt = document.getElementById("display_amt")
     // let tenbtn = document.getElementById("ten")
 
-
-
-    
-
-
-
-
     // fivebtn.addEventListener("click", (e) => {
-
 
     //     let current_value = document.getElementById("SIP").value
     //     let company_value = percentage[selected_value]
@@ -604,13 +578,11 @@ invest_btn.addEventListener("click", function(e){
     //     let total_value = company_value[1] * current_value
     //     display_amt.innerHTML = "₹" + total_value
 
-
     // }
 
     // )
 
     // tenbtn.addEventListener("click", () => {
-
 
     //     let current_value = document.getElementById("SIP").value
     //     let company_value = percentage[selected_value]
@@ -619,18 +591,9 @@ invest_btn.addEventListener("click", function(e){
     //     let total_value = company_value[2] * current_value
     //     display_amt.innerHTML = total_value
 
-
     // }
 
     // )
-
-
-
-
-
-
-
-
 
     // if(fivebtn.clicked){
     //     alert("hlo")
@@ -681,10 +644,6 @@ invest_btn.addEventListener("click", function(e){
     // let amount = document.getElementById("amount").innerText;
     // console.log(amount);
     // let investedamount = document.getElementById('SIP').value;
-
-
-
-
 
     // let invest = [
     //     {
@@ -750,7 +709,6 @@ invest_btn.addEventListener("click", function(e){
 
     //     },
 
-
     // ]
 
     // console.log(values)
@@ -765,7 +723,6 @@ invest_btn.addEventListener("click", function(e){
     //     const wealthGained = finalValue - totalInvested
     //     return { totalInvested, finalValue, wealthGained }
     // }
-
 
 //     let company1 = [
 
@@ -830,7 +787,6 @@ invest_btn.addEventListener("click", function(e){
 
 // ]
 //     </script>
-
 
 </script>
 
