@@ -57,7 +57,7 @@
 <span></span>
 </h5>
             <p>
-Market is closed - opens on 7PM, <span id="live_time" class="Live"></span>
+Market is closed - opens on 7PM<span id="live_time" class="Live"></span>
 </p>
         </div>
     </div>
@@ -513,7 +513,7 @@ let stock_value;
             if (second < 10) {
                 second = `0${  second}`;
             }
-            const correct_time = `(${  hour  }:${  min  }:${  second  } ${  period  })`;
+            const correct_time = ` ${  hour  }:${  min  }:${  second  } ${  period  }`;
             time.innerHTML = correct_time;
             // console.log(correct_time)
             setTimeout(now_time, 1000);
