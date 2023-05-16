@@ -311,4 +311,5 @@ input[type="radio"]{
     margin-right: 15px;
     border-radius: 5px;
     font-size:larger;
+    cursor: pointer;
 }

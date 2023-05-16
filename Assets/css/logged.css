@@ -144,6 +144,7 @@ nav {
     border-color: blue;
     border-style: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .fas {
