@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Order History - Stock Market Platform</title>
+	<link rel="stylesheet" type="text/css" href="../Assets/css/Order.css">
+</head>
+
+<body>
+	<!-- Header -->
+	<header>
+		<div id="header">
+            <a href="../index.html">
+<img src="../Assets/images/InvestX New.png" alt="Logo Comes here" height="45px">
+</a>
+            <nav>
+                <a href="./Explore.html">US STOCKS</a>
+                <a href="./FD.html">FD</a>
+                <a href="#">Customer Service</a>
+            </nav>
+        </div>
+
+        <div id="search">
+
+            <input type="search" id="sk" placeholder=" Search Stocks, MF, etc..">
+            <i class="fas fa-search"></i>
+            <a id="login" href="#"></a>
+        </div>
+	</header>
+	<main id="joel">
+		<div id="history">Order History</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Stock</th>
+					<th>Order ID</th>
+					<th>Stock Name</th>
+					<!-- <th>Buy/Sell</th> -->
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Order Date</th>
+				</tr>
+			</thead>
+			<tbody id="table_body">
+				<!-- <tr>
+					<td>May 1, 2023</td>
+					<td>123456</td>
+					<td>Apple Inc.</td>
+					<td>Buy</td>
+					<td>$130.50</td>
+					<td>100</td>
+				</tr>
+				<tr>
+					<td>April 28, 2023</td>
+					<td>654321</td>
+					<td>Microsoft Corporation</td>
+					<td>Sell</td>
+					<td>$250.00</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>April 15, 2023</td>
+					<td>789456</td>
+					<td>Amazon.com, Inc.</td>
+					<td>Buy</td>
+					<td>$3,200.00</td>
+					<td>10</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</main>
+	<footer>
+		<p>&copy; 2023 InvestX</p>
+	</footer>
+	<script>
+		let order;
+		const active_user = JSON.parse(localStorage.getItem("profile_details"))
+		const orders = JSON.parse(localStorage.getItem("order_his"))
+
+		orders.find(el => {
+
+			if (active_user.user_email == el.user_email) {
+				// order = JSON.parse(localStorage.getItem("order_his"))
+
+				let tr;
+				// let td;
+
+				tr = document.createElement("tr")
+
+				const td = document.createElement("td")
+				td.innerHTML = `<img src="${el.stock_img}" alt="${el.stock_name}">`
+				tr.prepend(td)
+
+				const td1 = document.createElement("td")
+				td1.innerText = el.order_id
+				tr.append(td1)
+
+				const td2 = document.createElement("td")
+				td2.innerText = el.stock_name
+				tr.append(td2)
+
+				const td3 = document.createElement("td")
+				td3.innerText = el.stock_price
+				tr.append(td3)
+
+				const td4 = document.createElement("td")
+				td4.innerText = el.stock_qty
+				tr.append(td4)
+
+				const td5 = document.createElement("td")
+				td5.innerText = el.order_date
+				tr.append(td5)
+
+				document.querySelector("#table_body").append(tr)
+
+			} else {
+				// order = [] 
+			}
+		})
+
+// const table = document.createElement('table');
+
+// const tableHeader = table.createTHead();
+// const tableHeaderRow = tableHeader.insertRow();
+// Object.keys(order[0]).forEach(key => {
+//   const headerCell = document.createElement('th');
+//   headerCell.textContent = key;
+//   tableHeaderRow.appendChild(headerCell);
+// });
+
+// const tableBody = table.createTBody();
+// order.forEach(rowData => {
+//   const row = tableBody.insertRow();
+//   Object.values(rowData).forEach(value => {
+//     const cell = row.insertCell();
+//     cell.textContent = value;
+//   });
+// });
+
+// document.querySelector("#joel").appendChild(table);
+	</script>
+</body>
+
+</html>

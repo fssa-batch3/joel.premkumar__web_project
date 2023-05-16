@@ -38,6 +38,11 @@ nav {
 
 }
 
+#company_name{
+    font-size: 30px;
+}
+
+
 #header nav a,
 #login {
     color: white;
@@ -109,12 +114,12 @@ nav {
     justify-content: center;
     border: solid black 1px;
     width: 1100px;
-    height: 600px;
+    height: 700px;
     margin-left: 200px;
-    margin-top: 30px;
+    margin-top: 60px;
     border-radius: 10px;
     background-color: aliceblue;
-    box-shadow: 5px 5px 10px wheat;
+    box-shadow: 2px 2px 2px wheat;
     margin-bottom: 50px;
 }
 
@@ -130,8 +135,11 @@ nav {
     width: 1000px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
 }
+
+
 .image #frsh{
   animation-name: tech;
   animation-duration: 3s;
@@ -146,7 +154,8 @@ nav {
 }
 
 span {
-    font-size: small;
+    font-size:large;
+    color: green;
 }
 
 #now {
@@ -158,6 +167,7 @@ span {
     border-color: blue;
     border-style: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #what p {
@@ -166,10 +176,6 @@ span {
 
 #Color {
     color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    width: 1200px;
-    padding-left: 200px;
 }
 
 #Explore {
@@ -190,6 +196,13 @@ span {
     align-items: space-between;
 }
 
+#Color {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    padding-left: 200px;
+}
+
 #Invest {
     padding: 0;
     margin-left: 20px;
@@ -198,6 +211,18 @@ span {
 #Invest p,
 h3 {
     margin: 0;
+}
+@media only screen and (max-width:600px) {
+    footer{
+        width: 1400px;
+     } 
+    header {
+        width: 1400px;
+    }
+    #Content {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 footer {
@@ -210,4 +235,81 @@ footer {
 
 footer p {
     margin-top: 250px;
+}
+#year_slider{
+    border-radius: 20px;
+    display: flex;
+}
+
+/* input[type="radio"]{
+    ;
+}
+.year{
+   
+}
+
+
+
+#year_slider button{
+    width:30px;
+    height:26px;
+    border:none;
+}
+
+.selected{
+    border: 3px dotted rgb(16, 152, 225);
+    padding: 2px;
+} */
+
+
+/* start of company images */
+.image img {
+    cursor: pointer;
+}
+
+.image .selected{
+    border: 5px dotted rgb(16, 152, 225);
+    padding: 2px;
+}
+
+/* end of company images */
+
+
+/* radio buttons */
+
+/* .radio_btns {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid black;
+} */
+
+/* .active{
+    background-color: #279b48;
+    padding: .5em;
+    border-radius: 5px;
+    color: white;
+   
+} */
+
+/* .radio_btns .radio_div label{
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="radio"]{
+    display: none;
+} */
+.radio_div{
+    border: 1px solid red;
+    background-color: rgb(0, 149, 255);
+    color: aliceblue;
+    padding: 10px;
+    margin-right: 15px;
+    border-radius: 5px;
+    font-size:larger;
+    cursor: pointer;
 }

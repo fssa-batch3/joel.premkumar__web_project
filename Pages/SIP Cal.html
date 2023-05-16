@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Calculator</title>
+</head>
+<body>
+    <input type="range" name="length" id="i" min="100" max="1000" value="100" step="100">
+    <output name="result" for="length" id="result">0</output>
+    <input type="number" placeholder="Rate of interest" id="r">
+    <input type="number" placeholder="Number of years" id="y">
+    <button id="three">3y</button>
+    <button id="five">5y</button>
+    <button id="ten">10y</button>
+
+    <button id="button">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+    // Code to Create SIP Calculator in Javascript
+
+    function charLength() {
+
+const charLength = document.getElementById('i').value;//0
+document.getElementById('result').innerHTML = charLength;//output=0
+return charLength;//0
+
+}
+document.getElementById('i').addEventListener('change', charLength)//0
+
+    function sipCalculator(installment, rate, years) {
+        const monthlyRate = rate / 100 / 12;
+        const months = years * 12;
+
+        const totalInvested = installment * months;
+        let finalValue = installment * ((1 + monthlyRate)**months - 1) / monthlyRate;
+        finalValue = parseInt(finalValue.toFixed(0));
+        const wealthGained = finalValue - totalInvested
+        return {totalInvested, finalValue, wealthGained}
+    }
+
+    function render() {
+        const installment = document.querySelector("#i").value;
+        const rate = document.querySelector("#r").value;
+        const years = document.querySelector("#y").value;
+
+        const data = sipCalculator(installment, rate, years);
+        const result = `
+        Final Value: ₹${data.finalValue},
+        Total Invested: ₹${data.totalInvested},
+        Wealth Gained: ₹${data.wealthGained}`;
+        document.querySelector("#result").innerHTML = result
+    }
+
+    document.querySelector("#button").addEventListener("click", render);
+
+// How to create SIP Calculator in javascript?
+    </script>
+
+</body>
+</html>

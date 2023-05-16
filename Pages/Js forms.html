@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+</head>
+
+<body class="body">
+  <div class="login-page">
+    <div class="form">
+      <form>
+        <input type="text" id="username" placeholder="&#xf007;  username" required>
+        <input type="email" id="password" placeholder="&#xf023;  password" required>
+        <br>
+        <br>
+        <button type="button" onclick="login()"> LOGIN </button>
+        <p></p>
+      </form>
+      <form class="login-form">
+        <a href="./matches.html">
+          <button type="button">SIGN UP</button>
+        </a>
+      </form>
+    </div>
+  </div>
+  <script>    function login() {
+      const username = document.getElementById("username").value
+      const password = document.getElementById("password").value
+
+      console.log(username)
+      console.log(password)
+
+      localStorage.setItem("user_email", username)
+
+      // window.location.href = "../index.html"
+    }
+  </script>
+</body>
+
+</html>
